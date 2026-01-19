@@ -300,7 +300,7 @@ function openModal(work) {
                 <iframe src="${work.pdf}" class="pdf-viewer"></iframe>
             </div>
             <div class="modal-footer">
-                <p> The complete copy of source sode is available on my GitHub account. </p>
+                <p> The complete copy of source code is available on my GitHub account. </p>
             </div>
         `;
     } else if (work.originalSize) {
@@ -710,4 +710,5 @@ window.addEventListener('scroll', () => {
     
     // Update scroll to top button visibility
     toggleScrollToTopButton();
+
 });
