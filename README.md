@@ -16,7 +16,7 @@ A modern, responsive portfolio website built with HTML, CSS, and JavaScript, fea
 
 ## Setup Instructions
 1. Clone or download the repository
-2. Open portfolio.html in any modern web browser
+2. Open index.html in any modern web browser
 3. For full EmailJS functionality, update the credentials in script.js with your own EmailJS account details
 4. Ensure all assets (images, PDFs) are in the correct directories as referenced in the code
 
