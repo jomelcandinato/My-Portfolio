@@ -9,7 +9,7 @@ A modern, responsive portfolio website built with HTML, CSS, and JavaScript, fea
 - Resume Viewer: Built-in PDF viewer for resume with download option
 
 ## Technologies Used
-- Frontend: HTML5, CSS, JavaScript
+- Frontend: HTML, CSS, JavaScript
 - Styling: Custom CSS with Flexbox and Grid layouts
 - Animations: CSS keyframes and JavaScript Intersection Observer
 - External Services: EmailJS for email functionality, Font Awesome for icons, Google Fonts
