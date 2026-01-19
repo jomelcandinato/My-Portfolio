@@ -80,8 +80,33 @@
             <button class="filter-btn animate-text" data-filter="projects">Projects</button>
             <button class="filter-btn animate-text" data-filter="webinars">Webinar Certificates</button>
         </div>
-        <div class="works-grid" id="works-grid">
-            <!-- Works will be populated by JS -->
+        
+        <!-- Desktop Grid View -->
+        <div class="works-grid-container desktop-view">
+            <div class="works-grid" id="works-grid">
+                <!-- Works will be populated by JS -->
+            </div>
+        </div>
+        
+        <!-- Mobile Carousel View -->
+        <div class="carousel-container mobile-view">
+            <button class="carousel-arrow left-arrow" id="prevWork">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="carousel-track-container">
+                <div class="carousel-track" id="carousel-track">
+                    <!-- Works for carousel will be populated by JS -->
+                </div>
+            </div>
+            
+            <button class="carousel-arrow right-arrow" id="nextWork">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="carousel-indicators" id="carousel-indicators">
+                <!-- Indicators will be populated by JS -->
+            </div>
         </div>
     </section>
 
@@ -125,7 +150,7 @@
         </div>
     </section>
 
-        <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-main">
