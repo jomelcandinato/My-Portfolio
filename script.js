@@ -107,6 +107,10 @@ const worksData = [
 
 // DOM Elements
 const worksGrid = document.getElementById('works-grid');
+const carouselTrack = document.getElementById('carousel-track');
+const carouselIndicators = document.getElementById('carousel-indicators');
+const prevBtn = document.getElementById('prevWork');
+const nextBtn = document.getElementById('nextWork');
 const filterBtns = document.querySelectorAll('.filter-btn');
 const modal = document.getElementById('modal');
 const modalBody = document.getElementById('modal-body');
@@ -127,6 +131,12 @@ const formMessage = document.getElementById('formMessage');
 const viewResumeBtn = document.getElementById('viewResumeBtn');
 const resumeModal = document.getElementById('resumeModal');
 const resumeViewer = document.getElementById('resumeViewer');
+
+// Carousel state
+let currentCarouselIndex = 0;
+let filteredWorks = [];
+let isMobile = false;
+let carouselInterval = null;
 
 // Track which sections have been animated
 const animatedSections = new Set();
@@ -225,19 +235,27 @@ function scrollToTop() {
     });
 }
 
-// Initialize Works Grid
+// Check if mobile view
+function checkMobileView() {
+    isMobile = window.innerWidth <= 768;
+    return isMobile;
+}
+
+// Initialize Works Grid (Desktop) and Carousel (Mobile)
 function renderWorks(filter = 'all') {
-    worksGrid.innerHTML = '';
-    const filteredWorks = worksData.filter(work => filter === 'all' || work.category === filter);
+    filteredWorks = worksData.filter(work => filter === 'all' || work.category === filter);
     
+    // Clear existing content
+    worksGrid.innerHTML = '';
+    carouselTrack.innerHTML = '';
+    carouselIndicators.innerHTML = '';
+    
+    // Reset carousel index
+    currentCarouselIndex = 0;
+    
+    // Render Desktop Grid View
     filteredWorks.forEach((work, index) => {
-        const workItem = document.createElement('div');
-        workItem.classList.add('work-item', 'animate-text');
-        workItem.innerHTML = `
-            <img src="${work.image}" alt="${work.title}">
-            <h3>${work.title}</h3>
-            <p>${work.description.substring(0, 100)}...</p>
-        `;
+        const workItem = createWorkItem(work);
         workItem.addEventListener('click', () => openModal(work));
         worksGrid.appendChild(workItem);
         
@@ -246,6 +264,110 @@ function renderWorks(filter = 'all') {
             workItem.classList.add('visible');
         }, index * 150);
     });
+    
+    // Render Mobile Carousel View
+    filteredWorks.forEach((work, index) => {
+        // Create carousel slide
+        const carouselSlide = document.createElement('div');
+        carouselSlide.className = 'carousel-slide';
+        
+        const workItem = createWorkItem(work);
+        workItem.addEventListener('click', () => openModal(work));
+        carouselSlide.appendChild(workItem);
+        carouselTrack.appendChild(carouselSlide);
+        
+        // Create indicator
+        const indicator = document.createElement('button');
+        indicator.className = `carousel-indicator ${index === 0 ? 'active' : ''}`;
+        indicator.setAttribute('data-index', index);
+        indicator.addEventListener('click', () => goToCarouselSlide(index));
+        carouselIndicators.appendChild(indicator);
+    });
+    
+    // Update carousel position
+    updateCarouselPosition();
+    
+    // Restart auto-advance if needed
+    if (isMobile && filteredWorks.length > 1) {
+        startCarouselAutoAdvance();
+    }
+}
+
+// Create a work item element
+function createWorkItem(work) {
+    const workItem = document.createElement('div');
+    workItem.className = 'work-item animate-text';
+    workItem.innerHTML = `
+        <img src="${work.image}" alt="${work.title}" loading="lazy">
+        <div class="work-item-content">
+            <h3>${work.title}</h3>
+            <p>${work.description}</p>
+        </div>
+    `;
+    return workItem;
+}
+
+// Carousel Functions
+function updateCarouselPosition() {
+    if (!isMobile || filteredWorks.length === 0) return;
+    
+    const trackWidth = carouselTrack.offsetWidth;
+    const slideWidth = trackWidth / filteredWorks.length;
+    const translateX = -currentCarouselIndex * slideWidth;
+    
+    carouselTrack.style.transform = `translateX(${translateX}px)`;
+    
+    // Update indicators
+    document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentCarouselIndex);
+    });
+}
+
+function nextCarouselSlide() {
+    if (filteredWorks.length === 0) return;
+    
+    currentCarouselIndex = (currentCarouselIndex + 1) % filteredWorks.length;
+    updateCarouselPosition();
+    resetCarouselAutoAdvance();
+}
+
+function prevCarouselSlide() {
+    if (filteredWorks.length === 0) return;
+    
+    currentCarouselIndex = (currentCarouselIndex - 1 + filteredWorks.length) % filteredWorks.length;
+    updateCarouselPosition();
+    resetCarouselAutoAdvance();
+}
+
+function goToCarouselSlide(index) {
+    if (index >= 0 && index < filteredWorks.length) {
+        currentCarouselIndex = index;
+        updateCarouselPosition();
+        resetCarouselAutoAdvance();
+    }
+}
+
+// Carousel auto-advance functionality
+function startCarouselAutoAdvance() {
+    if (isMobile && filteredWorks.length > 1 && !carouselInterval) {
+        carouselInterval = setInterval(() => {
+            nextCarouselSlide();
+        }, 5000); // Change slide every 5 seconds
+    }
+}
+
+function stopCarouselAutoAdvance() {
+    if (carouselInterval) {
+        clearInterval(carouselInterval);
+        carouselInterval = null;
+    }
+}
+
+function resetCarouselAutoAdvance() {
+    stopCarouselAutoAdvance();
+    if (isMobile && filteredWorks.length > 1) {
+        setTimeout(startCarouselAutoAdvance, 3000); // Restart after 3 seconds
+    }
 }
 
 // Filter Functionality with smooth transition
@@ -254,9 +376,12 @@ filterBtns.forEach(btn => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         
-        // Add fade out animation
+        // Add fade out animation for desktop view
         worksGrid.style.opacity = '0';
         worksGrid.style.transform = 'translateY(20px)';
+        
+        // For carousel view
+        carouselTrack.style.opacity = '0';
         
         // Wait for fade out, then render new content and fade in
         setTimeout(() => {
@@ -267,6 +392,9 @@ filterBtns.forEach(btn => {
                 worksGrid.style.opacity = '1';
                 worksGrid.style.transform = 'translateY(0)';
                 worksGrid.style.transition = 'all 0.5s ease';
+                
+                carouselTrack.style.opacity = '1';
+                carouselTrack.style.transition = 'opacity 0.5s ease';
             }, 50);
         }, 300);
     });
@@ -300,7 +428,7 @@ function openModal(work) {
                 <iframe src="${work.pdf}" class="pdf-viewer"></iframe>
             </div>
             <div class="modal-footer">
-                <p> The complete copy of source code is available on my GitHub account. </p>
+                <p> The complete copy of source sode is available on my GitHub account. </p>
             </div>
         `;
     } else if (work.originalSize) {
@@ -622,8 +750,33 @@ function makeFooterVisible() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Check initial view
+    checkMobileView();
+    
     // Initial render of works
     renderWorks();
+    
+    // Add carousel event listeners
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', prevCarouselSlide);
+        nextBtn.addEventListener('click', nextCarouselSlide);
+    }
+    
+    // Add carousel interaction handlers for auto-advance control
+    if (carouselTrack) {
+        carouselTrack.addEventListener('mouseenter', stopCarouselAutoAdvance);
+        carouselTrack.addEventListener('mouseleave', () => {
+            if (isMobile && filteredWorks.length > 1) {
+                startCarouselAutoAdvance();
+            }
+        });
+        carouselTrack.addEventListener('touchstart', stopCarouselAutoAdvance);
+        carouselTrack.addEventListener('touchend', () => {
+            if (isMobile && filteredWorks.length > 1) {
+                setTimeout(startCarouselAutoAdvance, 3000);
+            }
+        });
+    }
     
     // Make sure footer is visible
     footer.style.display = 'block';
@@ -674,15 +827,34 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('2. Service ID');
         console.warn('3. Template ID');
     }
+    
+    // Start carousel auto-advance if on mobile
+    if (isMobile && filteredWorks.length > 1) {
+        startCarouselAutoAdvance();
+    }
 });
 
 // Handle page refresh - reset animations
 window.addEventListener('beforeunload', () => {
     animatedSections.clear();
+    stopCarouselAutoAdvance();
 });
 
 // Handle resize events
 window.addEventListener('resize', () => {
+    // Check if view changed between mobile/desktop
+    const wasMobile = isMobile;
+    checkMobileView();
+    
+    // Re-render if mobile state changed
+    if (wasMobile !== isMobile) {
+        const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+        renderWorks(activeFilter);
+    }
+    
+    // Update carousel position
+    updateCarouselPosition();
+    
     // Close mobile menu on resize to desktop
     if (window.innerWidth > 768) {
         navMenu.classList.remove('active');
@@ -710,5 +882,4 @@ window.addEventListener('scroll', () => {
     
     // Update scroll to top button visibility
     toggleScrollToTopButton();
-
 });
