@@ -407,11 +407,11 @@ section.visible {
 }
 
 /* ============================================= */
-/* CAROUSEL STYLES FOR MOBILE */
+/* MOBILE HORIZONTAL SCROLL STYLES */
 /* ============================================= */
 
-/* Hide carousel on desktop, show on mobile */
-.carousel-container.mobile-view {
+/* Hide mobile scroll view on desktop */
+.mobile-scroll-container.mobile-view {
     display: none;
 }
 
@@ -491,103 +491,59 @@ section.visible {
     max-height: 100%;
 }
 
-/* Carousel Styles */
-.carousel-container {
-    position: relative;
+/* Mobile Horizontal Scroll Container */
+.mobile-scroll-container {
     width: 100%;
-    max-width: 500px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 0.5rem;
 }
 
-.carousel-track-container {
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 400px;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.carousel-slide .work-item {
+.mobile-scroll-wrapper {
     width: 100%;
-    height: 100%;
-    max-width: 350px;
-    margin: 0 auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1rem 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #4A90E2 rgba(255, 255, 255, 0.1);
+}
+
+.mobile-scroll-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.mobile-scroll-wrapper::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.mobile-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #4A90E2, #50E3C2);
+    border-radius: 4px;
+}
+
+.mobile-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #50E3C2, #4A90E2);
+}
+
+.mobile-scroll-track {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0.5rem;
+    width: max-content;
+    min-height: 350px;
+}
+
+.mobile-scroll-track .work-item {
+    width: 280px;
+    min-width: 280px;
+    height: 320px;
     opacity: 1;
     transform: translateY(0);
+    margin: 0;
 }
 
-.carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: linear-gradient(135deg, #4A90E2, #50E3C2);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    z-index: 10;
-    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
-    transition: all 0.3s ease;
-}
-
-.carousel-arrow:hover {
-    background: linear-gradient(135deg, #50E3C2, #4A90E2);
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
-}
-
-.left-arrow {
-    left: 0;
-}
-
-.right-arrow {
-    right: 0;
-}
-
-.carousel-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    padding: 1rem 0;
-}
-
-.carousel-indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgba(74, 144, 226, 0.3);
-    border: 2px solid #4A90E2;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.carousel-indicator.active {
-    background-color: #4A90E2;
-    transform: scale(1.2);
-}
-
-/* Work Item Styles - Updated for both grid and carousel */
+/* Work Item Styles - Updated for both grid and scroll */
 .work-item {
     background: white;
     border-radius: 15px;
@@ -1242,16 +1198,16 @@ section.visible {
     
     /* Works Section Mobile Styles */
     .works {
-        min-height: 550px;
+        min-height: 400px;
         padding: 1rem;
     }
     
-    /* Hide desktop grid, show carousel */
+    /* Hide desktop grid, show mobile scroll */
     .works-grid-container.desktop-view {
         display: none;
     }
     
-    .carousel-container.mobile-view {
+    .mobile-scroll-container.mobile-view {
         display: block;
     }
     
@@ -1261,7 +1217,7 @@ section.visible {
         justify-content: flex-start;
         overflow-x: auto;
         padding: 0.5rem 0;
-        margin: 0 -1rem 2rem -1rem;
+        margin: 0 -1rem 1.5rem -1rem;
         padding-left: 1rem;
         gap: 0.75rem;
         -webkit-overflow-scrolling: touch;
@@ -1278,31 +1234,25 @@ section.visible {
         margin: 0;
     }
     
-    /* Carousel adjustments */
-    .carousel-container {
-        padding: 0 3rem;
+    /* Mobile scroll adjustments */
+    .mobile-scroll-container {
+        padding: 0;
     }
     
-    .carousel-track {
-        height: 350px;
+    .mobile-scroll-wrapper {
+        padding: 0.5rem 0.25rem;
     }
     
-    .carousel-slide .work-item {
-        max-width: 300px;
+    .mobile-scroll-track {
+        gap: 1rem;
+        padding: 0.5rem 0.25rem;
+        min-height: 320px;
     }
     
-    .carousel-arrow {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-    
-    .left-arrow {
-        left: 0.5rem;
-    }
-    
-    .right-arrow {
-        right: 0.5rem;
+    .mobile-scroll-track .work-item {
+        width: 260px;
+        min-width: 260px;
+        height: 300px;
     }
     
     .contact-form {
@@ -1431,25 +1381,26 @@ section.visible {
     
     /* Works Section Mobile Small Screen */
     .works {
-        min-height: 520px;
+        min-height: 380px;
     }
     
-    .carousel-track {
-        height: 320px;
+    .mobile-scroll-track {
+        min-height: 300px;
     }
     
-    .carousel-slide .work-item {
-        max-width: 280px;
+    .mobile-scroll-track .work-item {
+        width: 240px;
+        min-width: 240px;
+        height: 280px;
     }
     
-    .carousel-container {
-        padding: 0 2.5rem;
+    .mobile-scroll-wrapper {
+        padding: 0.25rem;
     }
     
-    .carousel-arrow {
-        width: 30px;
-        height: 30px;
-        font-size: 0.9rem;
+    .mobile-scroll-track {
+        gap: 0.75rem;
+        padding: 0.25rem;
     }
     
     .filter-btn {
