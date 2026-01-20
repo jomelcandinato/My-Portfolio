@@ -153,8 +153,8 @@ const EMAILJS_CONFIG = {
 function downloadResume() {
     // Create a temporary anchor element
     const downloadLink = document.createElement('a');
-    downloadLink.href = 'assets/pdf/candinato_resume.pdf';
-    downloadLink.download = 'candinato_resume.pdf';
+    downloadLink.href = 'assets/pdf/my_resume.pdf';
+    downloadLink.download = 'my_resume.pdf';
     downloadLink.target = '_blank';
     
     // Append to body, click, and remove
