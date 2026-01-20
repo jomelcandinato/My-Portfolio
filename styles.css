@@ -825,7 +825,7 @@ section.visible {
 
 .contact-container {
     border-radius: 30px;
-    background-color: #e3e3e3ac;
+    background-color: #cececeac;
     width: 100%;
 }
 
@@ -909,8 +909,12 @@ section.visible {
 }
 
 @keyframes shimmer {
-    0% { background-position: -200% center; }
-    100% { background-position: 200% center; }
+    0% {
+        background-position: 200% center; /* Start pushed to one side */
+    }
+    100% {
+        background-position: 0% center;   /* Pull it across to the other */
+    }
 }
 
 #sendMessageBtn:hover {
