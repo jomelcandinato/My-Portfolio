@@ -5,7 +5,7 @@ A modern, responsive portfolio website built with HTML, CSS, and JavaScript, fea
 - Fully Responsive Design: Works seamlessly on mobile, tablet, and desktop devices
 - Interactive Animations: Smooth scroll animations, typewriter effect, and hover interactions
 - Email Integration: Contact form powered by EmailJS for direct communication
-- Project Showcase: Modal displays for webinar certificates and project details (NewsHub, Portfolio)
+- Project Showcase: Modal displays for webinar certificates and project details
 - Resume Viewer: Built-in PDF viewer for resume with download option
 
 ## Technologies Used
