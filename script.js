@@ -89,18 +89,18 @@ const worksData = [
     // New Projects (2 items)
     {
         id: 13,
-        title: "NewsHub",
+        title: "NewsHub: A Global and Local News Aggregation Platform",
         category: "projects",
         image: "assets/images/newshub.png",
-        description: "A Global and Local News Aggregation Platform.",
+        description: "A final project for the subject 'Integrative Programming & Technologies' featuring real-time access to global and local news.",
         pdf: "assets/pdf/newshub.pdf"
     },
     {
         id: 14,
-        title: "Portfolio",
+        title: "Personal Portfolio Website",
         category: "projects",
         image: "assets/images/portfolio.png",
-        description: "A user-friendly e-portfolio.",
+        description: "A modern and responsive portfolio website.",
         iframe: "index.html"
     }
 ];
@@ -323,7 +323,7 @@ function openModal(work) {
                 <iframe src="${work.pdf}" class="pdf-viewer"></iframe>
             </div>
             <div class="modal-footer">
-                <p> The complete copy of source code is available on my GitHub account. </p>
+                <p> For local testing and setup, the source code for NewsHub is available on my <a href="https://github.com/jomelcandinato"> GitHub </a> repository. </p>
             </div>
         `;
     } else if (work.originalSize) {
