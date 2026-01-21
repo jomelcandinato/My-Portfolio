@@ -362,7 +362,7 @@ section.visible {
 .section-title {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     color: #ffffff;
     font-weight: 700;
 }
@@ -424,7 +424,7 @@ section.visible {
     display: flex;
     flex-direction: column;
     height: auto;
-    padding: 2rem;
+    padding: 1rem;
     min-height: 500px;
 }
 
@@ -613,7 +613,6 @@ section.visible {
 .hobbies-intro {
     font-size: 0.2rem;
     max-width: 500px;
-    margin: 0 auto 1rem;
     color: #ffffff;
     line-height: 1.0;
 }
@@ -632,7 +631,7 @@ section.visible {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
-    padding: 1.5rem;
+    padding: 0.5rem;
 }
 
 .hobby-card:hover {
@@ -770,9 +769,8 @@ section.visible {
 .hobby-description {
     color: #191919;
     font-size: 0.75rem;
-    line-height: 1.3;
-    margin-top: 0.3rem;
-    margin-bottom: 0rem;
+    line-height: 1.0;
+    margin-top: 0.5rem;
     padding: 0 0rem;
 }
 
@@ -1688,7 +1686,7 @@ section.visible {
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     
     .view-resume-btn {
