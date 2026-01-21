@@ -20,6 +20,7 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#works" class="nav-link">Works</a></li>
+                <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -54,7 +55,7 @@
     <section id="about" class="about">
         <h2 class="section-title animate-text">About Me</h2>
         
-        <p class="about-text animate-text">My name is <strong>Jomel L. Candinato</strong>, a 4th-year BSIT student from Pateros Technological College, eager to learn and grow in the field of Information Technology. I am currently developing my practical skills and exploring various aspects of technology. My goal is to gain more knowledge and experience, to create effective and user-friendly digital solutions in the future.</p>
+        <p class="about-text animate-text">My name is <strong>Jomel L. Candinato</strong>, a 4th-year BSIT student from Pateros Technological College, eager to learn and grow in the field of Information Technology. I am currently developing my practical skills and exploring various aspects of technology. My goal is to gain more knowledge and experience to create effective and user-friendly digital solutions in the future.</p>
     </section>
 
     <!-- Skills Section -->
@@ -77,7 +78,7 @@
         <h2 class="section-title animate-text">Works</h2>
         <div class="filter-buttons">
             <button class="filter-btn active animate-text" data-filter="all">All</button>
-            <button class="filter-btn animate-text" data-filter="projects">My Projects</button>
+            <button class="filter-btn animate-text" data-filter="projects">College Projects</button>
             <button class="filter-btn animate-text" data-filter="webinars">Webinar Certificates</button>
         </div>
         
@@ -94,6 +95,133 @@
                 <div class="mobile-scroll-track" id="mobile-scroll-track">
                     <!-- Works for mobile scroll will be populated by JS -->
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="hobbies">
+        <h2 class="section-title animate-text">My Hobbies</h2>
+        
+        <div class="hobbies-container">
+            <!-- Photography Hobby -->
+            <div class="hobby-card animate-text">
+                <div class="hobby-header">
+                    <h3><i class="fas fa-camera"></i> Photography</h3>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                <div class="hobby-preview photography-preview" data-hobby="photography">
+                    <!-- Collaged photo preview for Photography -->
+                    <div class="photo-collage">
+                        <div class="collage-row">
+                            <div class="collage-item" style="background-image: url('assets/hobbies/photography/photography1.png')"></div>
+                            <div class="collage-item" style="background-image: url('assets/hobbies/photography/photography2.png')"></div>
+                            <div class="collage-item" style="background-image: url('assets/hobbies/photography/photography3.png')"></div>
+                        </div>
+                        <div class="collage-row">
+                            <div class="collage-item" style="background-image: url('assets/hobbies/photography/photography4.png')"></div>
+                            <div class="collage-item" style="background-image: url('assets/hobbies/photography/photography5.png')"></div>
+                            <div class="collage-item" style="background-image: url('assets/hobbies/photography/photography6.png')"></div>
+                        </div>
+                        <div class="collage-row">
+                            <div class="collage-item" style="background-image: url('assets/hobbies/photography/photography7.png')"></div>
+                            <div class="collage-item" style="background-image: url('assets/hobbies/photography/photography8.png')"></div>
+                            <div class="collage-item" style="background-image: url('assets/hobbies/photography/photography9.png')"></div>
+                        </div>
+                        <div class="collage-row">
+                            <div class="collage-item" style="background-image: url('assets/hobbies/photography/photography10.png')"></div>
+                        </div>
+                    </div>
+                    <div class="view-gallery-overlay">
+                        <span>Click to View Gallery</span>
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <p class="hobby-description">Capturing moments and scenes that tell stories through my lens.</p>
+            </div>
+
+            <!-- Drawing Hobby -->
+            <div class="hobby-card animate-text">
+                <div class="hobby-header">
+                    <h3><i class="fas fa-paint-brush"></i> Drawing</h3>
+                    <span class="photo-count">5 artworks</span>
+                </div>
+                <div class="hobby-preview drawing-preview" data-hobby="drawing">
+                    <!-- Collaged photo preview for Drawing -->
+                    <div class="photo-collage">
+                        <div class="collage-row">
+                            <div class="collage-item" style="background-image: url('assets/hobbies/drawing/drawing1.png')"></div>
+                            <div class="collage-item" style="background-image: url('assets/hobbies/drawing/drawing2.png')"></div>
+                        </div>
+                        <div class="collage-row">
+                            <div class="collage-item" style="background-image: url('assets/hobbies/drawing/drawing3.png')"></div>
+                            <div class="collage-item" style="background-image: url('assets/hobbies/drawing/drawing4.png')"></div>
+                        </div>
+                        <div class="collage-row">
+                            <div class="collage-item" style="background-image: url('assets/hobbies/drawing/drawing5.png')"></div>
+                        </div>
+                    </div>
+                    <div class="view-gallery-overlay">
+                        <span>Click to View Gallery</span>
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <p class="hobby-description">Expressing creativity through sketches and digital art.</p>
+            </div>
+
+            <!-- Exercising Hobby -->
+            <div class="hobby-card animate-text">
+                <div class="hobby-header">
+                    <h3><i class="fas fa-dumbbell"></i> Exercising</h3>
+                    <span class="photo-count">5 photos</span>
+                </div>
+                <div class="hobby-preview exercise-preview" data-hobby="exercise">
+                    <!-- Collaged photo preview for Exercising -->
+                    <div class="photo-collage">
+                        <div class="collage-row">
+                            <div class="collage-item" style="background-image: url('assets/hobbies/exercising/exercise1.png')"></div>
+                            <div class="collage-item" style="background-image: url('assets/hobbies/exercising/exercise2.png')"></div>
+                        </div>
+                        <div class="collage-row">
+                            <div class="collage-item" style="background-image: url('assets/hobbies/exercising/exercise3.png')"></div>
+                            <div class="collage-item" style="background-image: url('assets/hobbies/exercising/exercise4.png')"></div>
+                        </div>
+                        <div class="collage-row">
+                            <div class="collage-item" style="background-image: url('assets/hobbies/exercising/exercise5.png')"></div>
+                        </div>
+                    </div>
+                    <div class="view-gallery-overlay">
+                        <span>Click to View Gallery</span>
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <p class="hobby-description">Staying fit and healthy through regular workouts and physical activities.</p>
+            </div>
+
+            <!-- Chess Hobby -->
+            <div class="hobby-card animate-text">
+                <div class="hobby-header">
+                    <h3><i class="fas fa-chess"></i> Chess</h3>
+                    <span class="photo-count">4 photos</span>
+                </div>
+                <div class="hobby-preview chess-preview" data-hobby="chess">
+                    <!-- Collaged photo preview for Chess -->
+                    <div class="photo-collage">
+                        <div class="collage-row">
+                            <div class="collage-item" style="background-image: url('assets/hobbies/chess/chess1.png')"></div>
+                            <div class="collage-item" style="background-image: url('assets/hobbies/chess/chess2.png')"></div>
+                        </div>
+                        <div class="collage-row">
+                            <div class="collage-item" style="background-image: url('assets/hobbies/chess/chess3.png')"></div>
+                            <div class="collage-item" style="background-image: url('assets/hobbies/chess/chess4.png')"></div>
+                        </div>
+                    </div>
+                    <div class="view-gallery-overlay">
+                        <span>Click to View Gallery</span>
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <p class="hobby-description">Strategic thinking and mental exercise through the game of kings.</p>
             </div>
         </div>
     </section>
@@ -181,6 +309,33 @@
         </div>
     </div>
 
+    <!-- Hobbies Gallery Modal -->
+    <div id="hobbiesModal" class="modal">
+        <div class="modal-content hobbies-modal">
+            <span class="close close-hobbies">&times;</span>
+            <div class="modal-header">
+                <h3 id="hobbyModalTitle"></h3>
+                <p class="modal-description" id="hobbyModalCount"></p>
+            </div>
+            <div class="modal-content-area">
+                <div class="hobby-gallery" id="hobbyGallery">
+                    <!-- Gallery images will be populated by JS -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="gallery-nav">
+                    <button class="gallery-nav-btn prev-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <span class="gallery-counter" id="galleryCounter">1 / 10</span>
+                    <button class="gallery-nav-btn next-btn" id="nextBtn">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Resume Modal -->
     <div id="resumeModal" class="modal">
         <div class="modal-content resume-modal">
@@ -206,7 +361,3 @@
     
 </body>
 </html>
-
-
-
-
