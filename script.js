@@ -105,6 +105,62 @@ const worksData = [
     }
 ];
 
+// Hobbies Data - Replace with your actual photo paths
+const hobbiesData = {
+    photography: {
+        title: "Photography",
+        count: 10,
+        description: "Capturing moments and scenes that tell stories through my lens.",
+        photos: [
+            "assets/hobbies/photography/photography1.png",
+            "assets/hobbies/photography/photography2.png",
+            "assets/hobbies/photography/photography3.png",
+            "assets/hobbies/photography/photography4.png",
+            "assets/hobbies/photography/photography5.png",
+            "assets/hobbies/photography/photography6.png",
+            "assets/hobbies/photography/photography7.png",
+            "assets/hobbies/photography/photography8.png",
+            "assets/hobbies/photography/photography9.png",
+            "assets/hobbies/photography/photography10.png"
+        ]
+    },
+    drawing: {
+        title: "Drawing",
+        count: 5,
+        description: "Expressing creativity through sketches and digital art.",
+        photos: [
+            "assets/hobbies/drawing/drawing1.png",
+            "assets/hobbies/drawing/drawing2.png",
+            "assets/hobbies/drawing/drawing3.png",
+            "assets/hobbies/drawing/drawing4.png",
+            "assets/hobbies/drawing/drawing5.png"
+        ]
+    },
+    exercise: {
+        title: "Exercising",
+        count: 5,
+        description: "Staying fit and healthy through regular workouts and physical activities.",
+        photos: [
+            "assets/hobbies/exercising/exercise1.png",
+            "assets/hobbies/exercising/exercise2.png",
+            "assets/hobbies/exercising/exercise3.png",
+            "assets/hobbies/exercising/exercise4.png",
+            "assets/hobbies/exercising/exercise5.png"
+        ]
+    },
+    chess: {
+        title: "Chess",
+        count: 4,
+        description: "Strategic thinking and mental exercise through the game of kings.",
+        photos: [
+            "assets/hobbies/chess/chess1.png",
+            "assets/hobbies/chess/chess2.png",
+            "assets/hobbies/chess/chess3.png",
+            "assets/hobbies/chess/chess4.png"
+        ]
+    }
+};
+
 // DOM Elements
 const worksGrid = document.getElementById('works-grid');
 const mobileScrollTrack = document.getElementById('mobile-scroll-track');
@@ -113,6 +169,7 @@ const modal = document.getElementById('modal');
 const modalBody = document.getElementById('modal-body');
 const closeBtn = document.querySelector('.close');
 const closeResumeBtn = document.querySelector('.close-resume');
+const closeHobbiesBtn = document.querySelector('.close-hobbies');
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('section');
 const hamburger = document.querySelector('.hamburger');
@@ -128,9 +185,20 @@ const formMessage = document.getElementById('formMessage');
 const viewResumeBtn = document.getElementById('viewResumeBtn');
 const resumeModal = document.getElementById('resumeModal');
 const resumeViewer = document.getElementById('resumeViewer');
+const hobbiesModal = document.getElementById('hobbiesModal');
+const hobbyModalTitle = document.getElementById('hobbyModalTitle');
+const hobbyModalCount = document.getElementById('hobbyModalCount');
+const hobbyGallery = document.getElementById('hobbyGallery');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const galleryCounter = document.getElementById('galleryCounter');
 
 // Track which sections have been animated
 const animatedSections = new Set();
+
+// Hobbies gallery state
+let currentHobby = null;
+let currentPhotoIndex = 0;
 
 // EmailJS Configuration - REPLACE WITH YOUR ACTUAL CREDENTIALS
 const EMAILJS_CONFIG = {
@@ -295,6 +363,66 @@ filterBtns.forEach(btn => {
     });
 });
 
+// Hobbies Gallery Functions
+function openHobbiesGallery(hobbyType) {
+    currentHobby = hobbiesData[hobbyType];
+    currentPhotoIndex = 0;
+    
+    // Update modal title and count
+    hobbyModalTitle.textContent = currentHobby.title;
+    hobbyModalCount.textContent = `${currentHobby.count} photos`;
+    
+    // Clear and populate gallery
+    hobbyGallery.innerHTML = '';
+    
+    currentHobby.photos.forEach((photo, index) => {
+        const slide = document.createElement('div');
+        slide.className = `gallery-slide ${index === 0 ? 'active' : ''}`;
+        slide.innerHTML = `
+            <img src="${photo}" alt="${currentHobby.title} photo ${index + 1}" 
+                 loading="lazy" onerror="this.src='https://via.placeholder.com/800x600/4A90E2/FFFFFF?text=${currentHobby.title}+${index+1}'">
+        `;
+        hobbyGallery.appendChild(slide);
+    });
+    
+    // Update counter
+    updateGalleryCounter();
+    
+    // Show modal
+    hobbiesModal.style.display = 'block';
+}
+
+function updateGalleryCounter() {
+    galleryCounter.textContent = `${currentPhotoIndex + 1} / ${currentHobby.count}`;
+    
+    // Update button states
+    prevBtn.disabled = currentPhotoIndex === 0;
+    nextBtn.disabled = currentPhotoIndex === currentHobby.count - 1;
+}
+
+function showPhoto(index) {
+    const slides = document.querySelectorAll('.gallery-slide');
+    slides.forEach(slide => slide.classList.remove('active'));
+    
+    if (slides[index]) {
+        slides[index].classList.add('active');
+        currentPhotoIndex = index;
+        updateGalleryCounter();
+    }
+}
+
+function nextPhoto() {
+    if (currentPhotoIndex < currentHobby.count - 1) {
+        showPhoto(currentPhotoIndex + 1);
+    }
+}
+
+function prevPhoto() {
+    if (currentPhotoIndex > 0) {
+        showPhoto(currentPhotoIndex - 1);
+    }
+}
+
 // Modal Functionality
 function openModal(work) {
     const modalContent = document.querySelector('.modal-content');
@@ -372,6 +500,11 @@ closeResumeBtn.addEventListener('click', () => {
     resumeModal.style.display = 'none';
 });
 
+// Close hobbies modal
+closeHobbiesBtn.addEventListener('click', () => {
+    hobbiesModal.style.display = 'none';
+});
+
 // Close modals when clicking outside
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
@@ -382,6 +515,9 @@ window.addEventListener('click', (e) => {
     }
     if (e.target === resumeModal) {
         resumeModal.style.display = 'none';
+    }
+    if (e.target === hobbiesModal) {
+        hobbiesModal.style.display = 'none';
     }
 });
 
@@ -472,6 +608,18 @@ document.addEventListener('keydown', (e) => {
         }
         if (resumeModal.style.display === 'block') {
             resumeModal.style.display = 'none';
+        }
+        if (hobbiesModal.style.display === 'block') {
+            hobbiesModal.style.display = 'none';
+        }
+    }
+    
+    // Keyboard navigation for hobbies gallery
+    if (hobbiesModal.style.display === 'block' && currentHobby) {
+        if (e.key === 'ArrowRight') {
+            nextPhoto();
+        } else if (e.key === 'ArrowLeft') {
+            prevPhoto();
         }
     }
 });
@@ -688,6 +836,19 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         });
     }
+    
+    // Add event listeners to hobby previews
+    const hobbyPreviews = document.querySelectorAll('.hobby-preview');
+    hobbyPreviews.forEach(preview => {
+        preview.addEventListener('click', function() {
+            const hobbyType = this.dataset.hobby;
+            openHobbiesGallery(hobbyType);
+        });
+    });
+    
+    // Add keyboard navigation for hobbies gallery
+    prevBtn.addEventListener('click', prevPhoto);
+    nextBtn.addEventListener('click', nextPhoto);
     
     // Check if EmailJS is properly configured
     if (EMAILJS_CONFIG.USER_ID === 'YOUR_EMAILJS_USER_ID') {
