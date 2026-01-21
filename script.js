@@ -137,7 +137,7 @@ const hobbiesData = {
         ]
     },
     exercise: {
-        title: "Exercising",
+        title: "Working Out",
         count: 5,
         description: "Staying fit and healthy through regular workouts and physical activities.",
         photos: [
@@ -895,3 +895,4 @@ window.addEventListener('scroll', () => {
     // Update scroll to top button visibility
     toggleScrollToTopButton();
 });
+
