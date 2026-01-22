@@ -1089,24 +1089,24 @@ section.visible {
     align-items:center;
     background: none;
     border-radius: 20px;
-    margin: 2rem auto;
-    max-width: 1200px;
+    margin: 1rem auto;
+    max-width: 700px;
 }
 
 .contact-container {
     border-radius: 30px;
-    background-color: #cececeac;
+    background: linear-gradient(0deg, #a09e97 0.000%, #728f90 25.000%, #6c8795 50.000%, #68879d 75.000%, #91a4ae 100.000%);
     width: 100%;
 }
 
 .contact-form-wrapper {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .contact-form {
     background: transparent;
-    padding: 2.5rem;
+    padding: 2.0rem;
     border-radius: 30px;
     box-shadow: 0 50px 50px rgba(0,0,0,0.1);
 }
@@ -1119,25 +1119,26 @@ section.visible {
 }
 
 .form-group {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
 }
 
 .form-label {
     display: block;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
     font-weight: 600;
-    color: #333;
+    color: #0f0f0f;
     font-size: 1rem;
 }
 
 .form-control {
+    align-items: center;
     width: 100%;
-    padding: 1rem;
-    border: 2px solid #e1e5e9;
+    padding: 0.65rem;
+    border: 1px solid #e1e5e9;
     border-radius: 8px;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background-color: #f8f9fa;
+    background-color: #98999a;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -1146,7 +1147,7 @@ section.visible {
     box-shadow: 0 0 0 0.2rem rgba(55, 83, 160, 0.25);
     transform: scale(1.02);
     outline: none;
-    background-color: white;
+    background-color: rgb(211, 204, 204);
 }
 
 
