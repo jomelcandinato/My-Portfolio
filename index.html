@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Add EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Add Devicons for skill logos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -62,14 +64,38 @@
     <section id="skills" class="skills">
         <h2 class="section-title animate-text">Skills</h2>
         <ul class="skills-list">
-            <li class="skill-item animate-text">MS Word</li>
-            <li class="skill-item animate-text">MS PowerPoint</li>
-            <li class="skill-item animate-text">MS Excel</li>
-            <li class="skill-item animate-text">HTML</li>
-            <li class="skill-item animate-text">CSS</li>
-            <li class="skill-item animate-text">JavaScript</li>
-            <li class="skill-item animate-text">Canva</li>
-            <li class="skill-item animate-text">Figma</li>
+            <li class="skill-item animate-text" data-skill="MS Word">
+                <img src="assets/skills/word.png" alt="MS Word" class="skill-logo">
+                <span class="skill-name">Word</span>
+            </li>
+            <li class="skill-item animate-text" data-skill="MS PowerPoint">
+                <img src="assets/skills/powerpoint.png" alt="MS PowerPoint" class="skill-logo">
+                <span class="skill-name">PowerPoint</span>
+            </li>
+            <li class="skill-item animate-text" data-skill="MS Excel">
+                <img src="assets/skills/excel.png" alt="MS Excel" class="skill-logo">
+                <span class="skill-name">Excel</span>
+            </li>
+            <li class="skill-item animate-text" data-skill="HTML">
+                <img src="assets/skills/html.png" alt="HTML" class="skill-logo">
+                <span class="skill-name">HTML</span>
+            </li>
+            <li class="skill-item animate-text" data-skill="CSS">
+                <img src="assets/skills/css.png" alt="CSS" class="skill-logo">
+                <span class="skill-name">CSS</span>
+            </li>
+            <li class="skill-item animate-text" data-skill="JavaScript">
+                <img src="assets/skills/javascript.png" alt="JavaScript" class="skill-logo">
+                <span class="skill-name">JavaScript</span>
+            </li>
+            <li class="skill-item animate-text" data-skill="Canva">
+                <img src="assets/skills/canva.png" alt="Canva" class="skill-logo">
+                <span class="skill-name">Canva</span>
+            </li>
+            <li class="skill-item animate-text" data-skill="Figma">
+                <img src="assets/skills/figma.png" alt="Figma" class="skill-logo">
+                <span class="skill-name">Figma</span>
+            </li>
         </ul>
     </section>
 
@@ -229,40 +255,69 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2 class="section-title animate-text">Contact Me</h2>
-        <div class="contact-container">
-            <div class="contact-form-wrapper">
-                <form class="contact-form" id="contactFormElement">
-                    <div class="form-row">
-                        <div class="form-group animate-text">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-                        <div class="form-group animate-text">
-                            <label for="email" class="form-label"> Email Address</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
+        <div class="contact-wrapper">
+
+            <!-- Contact Info Cards - Below on Mobile, Right Side on Desktop -->
+             
+            <div class="contact-info-cards">
+                <div class="contact-card email-card animate-text">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-envelope"></i>
                     </div>
-                    <div class="form-group animate-text">
-                        <label for="subject" class="form-label">Subject</label>
-                        <input type="text" class="form-control" id="subject" name="subject" required>
+                    <div class="contact-card-content">
+                        <p>smokinjom@gmail.com</p>
                     </div>
-                    <div class="form-group animate-text">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <div class="contact-card phone-card animate-text">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-phone"></i>
                     </div>
-                    <div class="form-buttons animate-text">
-                        <button type="submit" class="form-button" id="sendMessageBtn">
-                            <span id="sendText">Send Message</span>
-                            <span id="sendingText" style="display: none;">
-                                <span class="spinner"></span>
-                                Sending...
-                            </span>
-                        </button>
-                        <button type="button" class="form-button clear-button" id="resetForm">Clear Form</button>
+                    <div class="contact-card-content">
+                        <p>+63 912 345 6789</p>
                     </div>
-                    <div id="formMessage" class="form-message" style="display: none;"></div>
-                </form>
+                </div>
             </div>
+            <!-- Contact Form - Main Content -->
+            <div class="contact-form-container">
+                <div class="contact-container">
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="contactFormElement">
+                            <div class="form-row">
+                                <div class="form-group animate-text">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="form-group animate-text">
+                                    <label for="email" class="form-label"> Email Address</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="form-group animate-text">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group animate-text">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <div class="form-buttons animate-text">
+                                <button type="submit" class="form-button" id="sendMessageBtn">
+                                    <span id="sendText">Send Message</span>
+                                    <span id="sendingText" style="display: none;">
+                                        <span class="spinner"></span>
+                                        Sending...
+                                    </span>
+                                </button>
+                                <button type="button" class="form-button clear-button" id="resetForm">Clear Form</button>
+                            </div>
+                            <div id="formMessage" class="form-message" style="display: none;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            
         </div>
     </section>
 
