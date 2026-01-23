@@ -1,3 +1,4 @@
+// Same as previous version - no changes needed
 // Sample Works Data - 12 webinars + 2 projects = 14 total
 const worksData = [
     {
@@ -192,6 +193,7 @@ const hobbyGallery = document.getElementById('hobbyGallery');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const galleryCounter = document.getElementById('galleryCounter');
+const skillItems = document.querySelectorAll('.skill-item');
 
 // Track which sections have been animated
 const animatedSections = new Set();
@@ -858,6 +860,17 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('2. Service ID');
         console.warn('3. Template ID');
     }
+    
+    // Add hover effect to skill items
+    skillItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.05)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
 });
 
 // Handle page refresh - reset animations
@@ -895,4 +908,3 @@ window.addEventListener('scroll', () => {
     // Update scroll to top button visibility
     toggleScrollToTopButton();
 });
-
