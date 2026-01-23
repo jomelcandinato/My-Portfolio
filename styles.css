@@ -1684,10 +1684,10 @@ section.visible {
     
     /* Form Buttons - Horizontal on Mobile */
     .form-buttons {
-        flex-direction:row;
-        justify-content:flex-start;
-        align-items:flex-start;
-        width: auto;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
         max-width: 500px;
         gap: 1rem;
     }
