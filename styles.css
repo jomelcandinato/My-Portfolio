@@ -683,18 +683,18 @@ section.visible {
 .hobbies-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 0.5rem;
+    gap: 0.7rem;
     margin-top: 0.5rem;
 }
 
 .hobby-card {
     background: linear-gradient(0deg, #ffecb7 0.000%, #e3e4d1 25.000%, #6c8795 50.000%, #68879d 75.000%, #91a4ae 100.000%);
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
-    padding: 0.5rem;
+    padding: 0.4rem;
 }
 
 .hobby-card:hover {
@@ -1939,11 +1939,11 @@ section.visible {
     /* Hobbies Section Mobile Styles */
     .hobbies-container {
         grid-template-columns: 1fr;
-        gap: 1.0rem;
+        gap: 0.7rem;
     }
     
     .hobby-card {
-        padding: 1.0rem;
+        padding: 0.4rem;
     }
     
     .hobby-preview {
@@ -2189,11 +2189,11 @@ section.visible {
     
     /* Hobbies Section Small Screen */
     .hobbies-container {
-        gap: 1rem;
+        gap: 0.7rem;
     }
     
     .hobby-card {
-        padding: 1rem;
+        padding: 0.5rem;
     }
     
     .hobby-preview {
