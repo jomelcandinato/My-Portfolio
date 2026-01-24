@@ -209,6 +209,12 @@ const EMAILJS_CONFIG = {
     TEMPLATE_ID: 'template_97oidgk' // Replace with your Template ID
 };
 
+// reCAPTCHA Configuration
+const RECAPTCHA_CONFIG = {
+    SITE_KEY: '6LdtolQsAAAAALiYiZLjwnqyG2gaZdsMY63rYvte', // Your reCAPTCHA Site Key
+    SECRET_KEY: '6LdtolQsAAAAAIVOoeyKEYSPYADio-5dblvxWbxp' // Your reCAPTCHA Secret Key (for server-side verification)
+};
+
 // Initialize EmailJS
 (function() {
     if (EMAILJS_CONFIG.USER_ID !== 'YOUR_EMAILJS_USER_ID') {
@@ -626,6 +632,36 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// reCAPTCHA Functions
+function onRecaptchaSuccess(token) {
+    console.log('reCAPTCHA verified successfully');
+    document.getElementById('recaptcha-error').style.display = 'none';
+    // Enable submit button if needed
+    const sendBtn = document.getElementById('sendMessageBtn');
+    sendBtn.disabled = false;
+}
+
+function onRecaptchaExpired() {
+    console.log('reCAPTCHA expired, please verify again');
+    document.getElementById('recaptcha-error').style.display = 'block';
+    document.getElementById('recaptcha-error').textContent = 'reCAPTCHA verification expired. Please verify again.';
+}
+
+function onRecaptchaError() {
+    console.log('reCAPTCHA error occurred');
+    document.getElementById('recaptcha-error').style.display = 'block';
+    document.getElementById('recaptcha-error').textContent = 'Error with reCAPTCHA verification. Please try again.';
+}
+
+// Function to manually check if reCAPTCHA is completed
+function isRecaptchaCompleted() {
+    if (typeof grecaptcha !== 'undefined') {
+        const response = grecaptcha.getResponse();
+        return response.length > 0;
+    }
+    return false;
+}
+
 // Show form message
 function showFormMessage(message, type = 'success') {
     formMessage.textContent = message;
@@ -643,15 +679,35 @@ function showFormMessage(message, type = 'success') {
     }
 }
 
-// Contact Form Submission with EmailJS
+// Contact Form Submission with EmailJS and reCAPTCHA
 contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+    
+    // Hide previous messages
+    formMessage.style.display = 'none';
+    document.getElementById('recaptcha-error').style.display = 'none';
+    
+    // Check reCAPTCHA
+    if (!isRecaptchaCompleted()) {
+        showFormMessage('Please complete the reCAPTCHA verification.', 'error');
+        document.getElementById('recaptcha-error').style.display = 'block';
+        document.getElementById('recaptcha-error').textContent = 'Please complete the reCAPTCHA verification.';
+        return;
+    }
+    
+    // Get reCAPTCHA token
+    const recaptchaToken = grecaptcha.getResponse();
+    
+    // Verify reCAPTCHA token (client-side check)
+    if (!recaptchaToken) {
+        showFormMessage('reCAPTCHA verification failed. Please try again.', 'error');
+        return;
+    }
     
     // Show sending state
     sendText.style.display = 'none';
     sendingText.style.display = 'inline';
     sendMessageBtn.disabled = true;
-    formMessage.style.display = 'none';
     
     // Get form values
     const name = document.getElementById('name').value.trim();
@@ -694,7 +750,8 @@ contactForm.addEventListener('submit', async (e) => {
             message: message,
             reply_to: email, // This sets the Reply-To header
             to_name: 'Jomel', // Your name for the email
-            date: new Date().toLocaleString()
+            date: new Date().toLocaleString(),
+            recaptcha_token: recaptchaToken // Add reCAPTCHA token to email content
         };
         
         const response = await emailjs.send(
@@ -709,8 +766,9 @@ contactForm.addEventListener('submit', async (e) => {
             // Success message with sender's email
             showFormMessage(`Thank you, ${name}! Your message has been sent. I will reach out to you soon.`, 'success');
             
-            // Reset form
+            // Reset form and reCAPTCHA
             contactForm.reset();
+            grecaptcha.reset();
             
             // Log the email for debugging
             console.log(`Message sent from: ${email}`);
@@ -737,6 +795,11 @@ contactForm.addEventListener('submit', async (e) => {
         
         showFormMessage(errorMessage, 'error');
         
+        // Reset reCAPTCHA on error
+        if (typeof grecaptcha !== 'undefined') {
+            grecaptcha.reset();
+        }
+        
         // For debugging - check if it's a credential issue
         if (EMAILJS_CONFIG.USER_ID === 'YOUR_EMAILJS_USER_ID') {
             console.error('EmailJS credentials not set. Please update the EMAILJS_CONFIG object in script.js');
@@ -749,10 +812,17 @@ contactForm.addEventListener('submit', async (e) => {
     }
 });
 
-// Clear Form Functionality
+// Clear Form Functionality with reCAPTCHA reset
 resetFormBtn.addEventListener('click', () => {
     contactForm.reset();
     formMessage.style.display = 'none';
+    document.getElementById('recaptcha-error').style.display = 'none';
+    
+    // Reset reCAPTCHA
+    if (typeof grecaptcha !== 'undefined') {
+        grecaptcha.reset();
+    }
+    
     // Remove any invalid states
     const formControls = contactForm.querySelectorAll('.form-control');
     formControls.forEach(control => {
@@ -859,6 +929,13 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('1. Public Key (User ID)');
         console.warn('2. Service ID');
         console.warn('3. Template ID');
+    }
+    
+    // Check if reCAPTCHA is properly configured
+    if (RECAPTCHA_CONFIG.SITE_KEY === '6LcBqm4qAAAAAG2C4wK6XYe_a-hd-ISwU1jOSLAW') {
+        console.log('✅ reCAPTCHA configured with site key');
+    } else {
+        console.warn('⚠️ Please update RECAPTCHA_CONFIG with your actual reCAPTCHA keys');
     }
     
     // Add hover effect to skill items
