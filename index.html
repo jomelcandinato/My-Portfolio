@@ -308,6 +308,20 @@
                                 <label for="message" class="form-label">Message</label>
                                 <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                             </div>
+                            
+                            <!-- Add reCAPTCHA Widget -->
+                            <div class="form-group animate-text">
+                                <div class="g-recaptcha" 
+                                     data-sitekey="6LdtolQsAAAAALiYiZLjwnqyG2gaZdsMY63rYvte" 
+                                     data-callback="onRecaptchaSuccess"
+                                     data-expired-callback="onRecaptchaExpired"
+                                     data-error-callback="onRecaptchaError">
+                                </div>
+                                <div id="recaptcha-error" class="error-message" style="display: none; color: #dc3545; font-size: 0.8rem; margin-top: 5px;">
+                                    Please complete the reCAPTCHA verification.
+                                </div>
+                            </div>
+                            
                             <div class="form-buttons animate-text">
                                 <button type="submit" class="form-button" id="sendMessageBtn">
                                     <span id="sendText">Send Message</span>
@@ -419,6 +433,9 @@
         </div>
     </div>
 
+    <!-- Add reCAPTCHA v2 Script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
     <script src="script.js"></script>
     
 </body>
