@@ -1037,7 +1037,7 @@ section.visible {
 .captcha-wrapper {
     flex: 1;
     min-width: 300px;
-    max-width: 350px;
+    max-width: 300px;
 }
 
 /* reCAPTCHA Styles */
@@ -1774,14 +1774,14 @@ section.visible {
     /* Captcha Wrapper - Mobile: Full width */
     .captcha-wrapper {
         width: 100%;
-        max-width: 500px;
+        max-width: 400px;
         min-width: auto;
     }
     
     /* reCAPTCHA Mobile Styles */
     .g-recaptcha {
         transform: scale(0.9);
-        transform-origin: left center;
+        transform-origin: left;
         margin: 0.5rem 0;
         justify-content: center;
     }
