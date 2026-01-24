@@ -689,9 +689,9 @@ contactForm.addEventListener('submit', async (e) => {
     
     // Check reCAPTCHA
     if (!isRecaptchaCompleted()) {
-        showFormMessage('Please complete the reCAPTCHA verification.', 'error');
+        showFormMessage('Please complete the reCAPTCHA verification!', 'error');
         document.getElementById('recaptcha-error').style.display = 'block';
-        document.getElementById('recaptcha-error').textContent = 'Please complete the reCAPTCHA verification.';
+        document.getElementById('recaptcha-error').textContent = 'Please complete the reCAPTCHA verification!';
         return;
     }
     
@@ -717,7 +717,7 @@ contactForm.addEventListener('submit', async (e) => {
     
     // Validate form
     if (!name || !email || !subject || !message) {
-        showFormMessage('Please fill in all fields.', 'error');
+        showFormMessage('Please fill in all fields!', 'error');
         sendText.style.display = 'inline';
         sendingText.style.display = 'none';
         sendMessageBtn.disabled = false;
@@ -727,7 +727,7 @@ contactForm.addEventListener('submit', async (e) => {
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        showFormMessage('Please enter a valid email address.', 'error');
+        showFormMessage('Please enter a valid email address!', 'error');
         sendText.style.display = 'inline';
         sendingText.style.display = 'none';
         sendMessageBtn.disabled = false;
