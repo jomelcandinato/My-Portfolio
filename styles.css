@@ -1022,11 +1022,29 @@ section.visible {
     resize: vertical;
 }
 
+/* Captcha and Buttons Container */
+.captcha-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 0.5px;
+    width: 100%;
+}
+
+/* Captcha Wrapper - Left side on desktop */
+.captcha-wrapper {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+}
+
 /* reCAPTCHA Styles */
 .g-recaptcha {
-    margin: 1rem 0;
+    margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .g-recaptcha > div {
@@ -1045,10 +1063,21 @@ section.visible {
     75% { transform: translateX(5px); }
 }
 
+/* Buttons Wrapper - Right side on desktop */
+.buttons-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    min-width: 300px;
+    max-width: 400px;
+}
+
 .form-buttons {
     display: flex;
+    flex-direction: row; /* Changed from column to row */
     gap: 1rem;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -1057,7 +1086,7 @@ section.visible {
     background: linear-gradient(135deg, #3753a0, #29b435);
     background-size: 100% auto;
     border: none;
-    padding: 12px 20px;
+    padding: 12px 30px;
     border-radius: 20px;
     color: white;
     font-size: 12px;
@@ -1067,6 +1096,9 @@ section.visible {
     animation: shimmer 2s infinite;
     position: relative;
     overflow: hidden;
+    min-width: 160px;
+    text-align: center;
+    white-space: nowrap;
 }
 
 @keyframes shimmer {
@@ -1093,6 +1125,9 @@ section.visible {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    min-width: 160px;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .clear-button:hover {
@@ -1409,7 +1444,7 @@ section.visible {
 
 .footer-text {
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     opacity: 1 !important;
     font-weight: 500;
     color: white;
@@ -1434,7 +1469,7 @@ section.visible {
     gap: 0.5rem;
 }
 
-.fb-link {
+.fblink {
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
@@ -1446,7 +1481,19 @@ section.visible {
     gap: 0.5rem;
 }
 
-.ig-link {
+.iglink {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tiktok-link {
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
@@ -1464,14 +1511,20 @@ section.visible {
     transform: translateY(-2px);
 }
 
-.fb-link:hover {
+.fblink:hover {
     background: #1c83f8;
     opacity: 1;
     transform: translateY(-2px);
 }
 
-.ig-link:hover {
+.iglink:hover {
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #833ab4, #5851db);
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.tiktok-link:hover {
+    background: #131212;
     opacity: 1;
     transform: translateY(-2px);
 }
@@ -1480,11 +1533,15 @@ section.visible {
     font-size: 1.2rem;
 }
 
-.fb-link i {
+.fblink i {
     font-size: 1.2rem;
 }
 
-.ig-link i {
+.iglink i {
+    font-size: 1.2rem;
+}
+
+.tiktok-link i {
     font-size: 1.2rem;
 }
 
@@ -1705,24 +1762,48 @@ section.visible {
         font-size: 1.1rem;
     }
     
+    /* Captcha and Buttons Container - Mobile: Stack vertically */
+    .captcha-buttons-container {
+        flex-direction: column;
+        gap: 1.0rem;
+        margin: 0.5rem 0;
+        width: 90%;
+        max-width: 500px;
+    }
+    
+    /* Captcha Wrapper - Mobile: Full width */
+    .captcha-wrapper {
+        width: 100%;
+        max-width: 500px;
+        min-width: auto;
+    }
+    
     /* reCAPTCHA Mobile Styles */
     .g-recaptcha {
         transform: scale(0.9);
         transform-origin: left center;
         margin: 0.5rem 0;
+        justify-content: center;
     }
     
-    /* Form Buttons - Horizontal on Mobile */
+    /* Buttons Wrapper - Mobile: Full width, centered */
+    .buttons-wrapper {
+        width: 100%;
+        max-width: 500px;
+        min-width: auto;
+        justify-content: center;
+    }
+    
+    /* Form Buttons - Horizontal on Mobile (already row) */
     .form-buttons {
         flex-direction: row;
         justify-content: center;
         align-items: center;
         width: 100%;
-        max-width: 500px;
         gap: 1rem;
     }
     
-    #sendMessageBtn,
+   #sendMessageBtn,
     .clear-button {
         padding: 0.875rem 1.5rem;
         font-size: 0.5rem;
@@ -2074,6 +2155,7 @@ section.visible {
         padding: 0.75rem 1.25rem;
         font-size: 0.6rem;
         min-width: 120px;
+        max-width: 180px;
     }
     
     /* Works Section Mobile Small Screen */
@@ -2128,7 +2210,7 @@ section.visible {
     }
     
     .social-links {
-        flex-direction: column;
+        flex-direction: row;
         gap: 1rem;
     }
     
@@ -2191,6 +2273,8 @@ section.visible {
     text-align: center;
     animation: slideIn 0.3s ease;
     transition: all 0.3s ease;
+    width: 100%;
+    max-width: 500px;
 }
 
 .success-message {
