@@ -963,7 +963,7 @@ section.visible {
     border-radius: 15px;
     background: linear-gradient(0deg, #a09e97 0.000%, #7a9090 25.000%, #7a888f 50.000%, #7998ae 75.000%, #94a6b0 100.000%);
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .contact-form-wrapper {
@@ -1728,7 +1728,7 @@ section.visible {
     .contact-container {
         width: 100%;
         max-width: 100%;
-        padding: 1.5rem;
+        padding: 1.0rem;
     }
     
     .contact-form-wrapper {
@@ -1767,7 +1767,7 @@ section.visible {
         flex-direction: column;
         gap: 1.0rem;
         margin: 0.5rem 0;
-        width: 90%;
+        width: 100%;
         max-width: 500px;
     }
     
@@ -1781,7 +1781,7 @@ section.visible {
     /* reCAPTCHA Mobile Styles */
     .g-recaptcha {
         transform: scale(0.9);
-        transform-origin: left;
+        transform-origin: left center;
         margin: 0.5rem 0;
         justify-content: center;
     }
