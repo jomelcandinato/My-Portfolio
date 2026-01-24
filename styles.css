@@ -1017,10 +1017,32 @@ section.visible {
     background-color: rgb(211, 204, 204);
 }
 
-
 .form-textarea {
     height: 100px;
     resize: vertical;
+}
+
+/* reCAPTCHA Styles */
+.g-recaptcha {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.g-recaptcha > div {
+    transform: scale(0.95);
+    transform-origin: left center;
+}
+
+/* reCAPTCHA error styling */
+#recaptcha-error {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
 }
 
 .form-buttons {
@@ -1683,6 +1705,13 @@ section.visible {
         font-size: 1.1rem;
     }
     
+    /* reCAPTCHA Mobile Styles */
+    .g-recaptcha {
+        transform: scale(0.9);
+        transform-origin: left center;
+        margin: 0.5rem 0;
+    }
+    
     /* Form Buttons - Horizontal on Mobile */
     .form-buttons {
         flex-direction: row;
@@ -2027,6 +2056,12 @@ section.visible {
     .form-control {
         padding: 0.75rem;
         font-size: 1rem;
+    }
+    
+    /* reCAPTCHA Small Screen */
+    .g-recaptcha {
+        transform: scale(0.85);
+        transform-origin: left center;
     }
     
     /* Form Buttons - Smaller on very small screens */
