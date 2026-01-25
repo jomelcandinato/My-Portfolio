@@ -256,98 +256,98 @@
         </div>
     </section>
 
-<!-- Contact Section -->
-<section id="contact" class="contact">
-    <h2 class="section-title animate-text">Contact Me</h2>
-    <div class="contact-wrapper">
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title animate-text">Contact Me</h2>
+        <div class="contact-wrapper">
 
-        <!-- Contact Info Cards - Below on Mobile, Right Side on Desktop -->
-        <div class="contact-info" style="font-size: 20px; font-weight: bold; color:rgb(255, 255, 255);">Get in Touch
-        <div class="contact-info-cards">
-            <div class="contact-card email-card animate-text">
-                <div class="contact-card-icon">
-                    <i class="fas fa-envelope"></i>
+            <!-- Contact Info Cards - Below on Mobile, Right Side on Desktop -->
+            <div class="contact-info" style="font-size: 20px; font-weight: bold; color:rgb(255, 255, 255);">Get in Touch
+            <div class="contact-info-cards">
+                <div class="contact-card email-card animate-text" onclick="sendEmail()" onmouseover="showTooltip(this, 'Click to send email')" onmouseout="hideTooltip(this)">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-card-content">
+                        <p class="contact-email">jomelcandinato.ojt@gmail.com</p>
+                        <!-- <span class="contact-action">Send Email</span> -->
+                    </div>
                 </div>
-                <div class="contact-card-content">
-                    <p style="font-size: 9px;">jomelcandinato.ojt@gmail.com</p>
+                
+                <div class="contact-card phone-card animate-text" onclick="makeCall()" onmouseover="showTooltip(this, 'Click to make a call')" onmouseout="hideTooltip(this)">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-card-content">
+                        <p class="contact-phone">+63 912 345 6789</p>
+                       <!--  <span class="contact-action">Make Call</span> -->
+                    </div>
                 </div>
             </div>
-            
-            <div class="contact-card phone-card animate-text">
-                <div class="contact-card-icon">
-                    <i class="fas fa-phone"></i>
-                </div>
-                <div class="contact-card-content">
-                    <p style="font-size: 9px;">+63 938 035 5961</p>
-                </div>
             </div>
-        </div>
-        </div>
 
-        <!-- Contact Form - Main Content -->
-        <div class="contact-form-container">
-            <p style="color: rgb(255, 255, 255); margin-left: 5px; margin-bottom: 3px;">I'd like to hear from you!</p>
-            <div class="contact-container">
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactFormElement">
-                        <div class="form-row">
-                            <div class="form-group animate-text">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
-                            </div>
-                            <div class="form-group animate-text">
-                                <label for="email" class="form-label"> Email Address</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
-                        </div>
-                        <div class="form-group animate-text">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" class="form-control" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group animate-text">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        
-                        <!-- reCAPTCHA and Buttons Container -->
-                        <div class="captcha-buttons-container">
-                            <!-- Add reCAPTCHA Widget - Left side on desktop -->
-                            <div class="captcha-wrapper animate-text">
-                                <div class="g-recaptcha" 
-                                     data-sitekey="6LdtolQsAAAAALiYiZLjwnqyG2gaZdsMY63rYvte" 
-                                     data-callback="onRecaptchaSuccess"
-                                     data-expired-callback="onRecaptchaExpired"
-                                     data-error-callback="onRecaptchaError">
+            <!-- Contact Form - Main Content -->
+            <div class="contact-form-container">
+                <p style="color: rgb(255, 255, 255); margin-left: 5px; margin-bottom: 3px;">I'd like to hear from you!</p>
+                <div class="contact-container">
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="contactFormElement">
+                            <div class="form-row">
+                                <div class="form-group animate-text">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
                                 </div>
-                                <div id="recaptcha-error" class="error-message" style="display: none; color: #dc3545; font-size: 0.7rem; margin-top: 1px; margin-bottom:1px;">
-                                    Please complete the reCAPTCHA verification!
+                                <div class="form-group animate-text">
+                                    <label for="email" class="form-label"> Email Address</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="form-group animate-text">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group animate-text">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <!-- reCAPTCHA and Buttons Container -->
+                            <div class="captcha-buttons-container">
+                                <!-- Add reCAPTCHA Widget - Left side on desktop -->
+                                <div class="captcha-wrapper animate-text">
+                                    <div class="g-recaptcha" 
+                                         data-sitekey="6LdtolQsAAAAALiYiZLjwnqyG2gaZdsMY63rYvte" 
+                                         data-callback="onRecaptchaSuccess"
+                                         data-expired-callback="onRecaptchaExpired"
+                                         data-error-callback="onRecaptchaError">
+                                    </div>
+                                    <div id="recaptcha-error" class="error-message" style="display: none; color: #dc3545; font-size: 0.7rem; margin-top: 1px; margin-bottom:1px;">
+                                        Please complete the reCAPTCHA verification!
+                                    </div>
+                                </div>
+                                
+                                <!-- Buttons Container - Right side on desktop -->
+                                <div class="buttons-wrapper">
+                                    <div class="form-buttons animate-text">
+                                        <button type="submit" class="form-button" id="sendMessageBtn">
+                                            <span id="sendText">Submit</span>
+                                            <span id="sendingText" style="display: none;">
+                                                <span class="spinner"></span>
+                                                Sending...
+                                            </span>
+                                        </button>
+                                        <button type="button" class="form-button clear-button" id="resetForm">Clear Form</button>
+                                    </div>
                                 </div>
                             </div>
                             
-                            <!-- Buttons Container - Right side on desktop -->
-                            <div class="buttons-wrapper">
-                                <div class="form-buttons animate-text">
-                                    <button type="submit" class="form-button" id="sendMessageBtn">
-                                        <span id="sendText">Send Message</span>
-                                        <span id="sendingText" style="display: none;">
-                                            <span class="spinner"></span>
-                                            Sending...
-                                        </span>
-                                    </button>
-                                    <button type="button" class="form-button clear-button" id="resetForm">Clear Form</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div id="formMessage" class="form-message" style="display: none;"></div>
-                    </form>
+                            <div id="formMessage" class="form-message" style="display: none;"></div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-        
-        
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -356,6 +356,9 @@
                 <p class="footer-text animate-text">Please follow my accounts:</p>
 
                 <div class="social-links">
+                     <a href="https://www.linkedin.com/in/jomel-candinato" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
                     <a href="https://github.com/jomelcandinato" class="github-link" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-github"></i>
                     </a>
@@ -445,4 +448,3 @@
     
 </body>
 </html>
-
