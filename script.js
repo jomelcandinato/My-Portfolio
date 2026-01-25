@@ -1,4 +1,3 @@
-// Same as previous version - no changes needed
 // Sample Works Data - 12 webinars + 2 projects = 14 total
 const worksData = [
     {
@@ -679,6 +678,45 @@ function showFormMessage(message, type = 'success') {
     }
 }
 
+// Show contact card message below the contact cards
+function showContactCardMessage(message, type = 'success') {
+    // Create a new message element specifically for contact cards
+    const contactCardsContainer = document.querySelector('.contact-info-cards');
+    const existingContactMessage = document.getElementById('contact-card-message');
+    
+    // Remove existing message if it exists
+    if (existingContactMessage) {
+        existingContactMessage.remove();
+    }
+    
+    // Create new message element
+    const contactMessage = document.createElement('div');
+    contactMessage.id = 'contact-card-message';
+    contactMessage.className = `contact-card-message ${type}-message`;
+    contactMessage.textContent = message;
+    
+    // Insert the message below the contact cards
+    contactCardsContainer.parentNode.insertBefore(contactMessage, contactCardsContainer.nextSibling);
+    
+    // Scroll the message into view
+    setTimeout(() => {
+        contactMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+    
+    // Hide message after 5 seconds
+    setTimeout(() => {
+        if (contactMessage.parentNode) {
+            contactMessage.style.opacity = '0';
+            contactMessage.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+                if (contactMessage.parentNode) {
+                    contactMessage.remove();
+                }
+            }, 300);
+        }
+    }, 5000);
+}
+
 // Contact Form Submission with EmailJS and reCAPTCHA
 contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -830,6 +868,91 @@ resetFormBtn.addEventListener('click', () => {
     });
 });
 
+// Contact Card Functions
+function sendEmail() {
+    const email = 'jomelcandinato.ojt@gmail.com';
+    const subject = 'Portfolio Inquiry';
+    const body = 'Hello Jomel,\n\nI visited your portfolio website and would like to get in touch...';
+    
+    // Create mailto link
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open email client
+    window.open(mailtoLink, '_blank');
+    
+    // Show confirmation message below contact cards
+    showContactCardMessage('Opening email client...', 'success');
+}
+
+function makeCall() {
+    const phoneNumber = '+639123456789'; // Remove spaces for proper tel: link
+    
+    // Create tel link
+    const telLink = `tel:${phoneNumber}`;
+    
+    // For mobile devices, this will open the phone dialer
+    // For desktop, it may not work, so we'll show a message
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        // Mobile device - open dialer
+        window.location.href = telLink;
+        // Show message
+        showContactCardMessage(`Opening phone dialer for ${phoneNumber}...`, 'success');
+    } else {
+        // Desktop - show phone number with instructions
+        showContactCardMessage(`Phone: ${phoneNumber}. On mobile, this would open your dialer.`, 'success');
+        
+        // Optional: Copy to clipboard
+        navigator.clipboard.writeText(phoneNumber).then(() => {
+            console.log('Phone number copied to clipboard');
+        }).catch(err => {
+            console.log('Failed to copy phone number: ', err);
+        });
+    }
+}
+
+// Tooltip functions for contact cards
+function showTooltip(element, message) {
+    // Check if tooltip already exists
+    let tooltip = element.querySelector('.contact-card-tooltip');
+    
+    if (!tooltip) {
+        // Create tooltip
+        tooltip = document.createElement('div');
+        tooltip.className = 'contact-card-tooltip';
+        tooltip.textContent = message;
+        element.appendChild(tooltip);
+        
+        // Position tooltip
+        setTimeout(() => {
+            tooltip.style.opacity = '1';
+            tooltip.style.visibility = 'visible';
+            tooltip.style.transform = 'translateX(-50%) translateY(-5px)';
+        }, 10);
+    } else {
+        // Update existing tooltip
+        tooltip.textContent = message;
+        tooltip.style.opacity = '1';
+        tooltip.style.visibility = 'visible';
+        tooltip.style.transform = 'translateX(-50%) translateY(-5px)';
+    }
+}
+
+function hideTooltip(element) {
+    const tooltip = element.querySelector('.contact-card-tooltip');
+    if (tooltip) {
+        tooltip.style.opacity = '0';
+        tooltip.style.visibility = 'hidden';
+        tooltip.style.transform = 'translateX(-50%) translateY(-10px)';
+        
+        // Remove tooltip after animation
+        setTimeout(() => {
+            if (tooltip.parentNode === element) {
+                element.removeChild(tooltip);
+            }
+        }, 300);
+    }
+}
+
 // Function to make footer elements always visible
 function makeFooterVisible() {
     const footerText = document.querySelector('.footer-text');
@@ -947,6 +1070,48 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) scale(1)';
         });
+    });
+    
+    // Add touch event listeners for mobile contact cards
+    const emailCard = document.querySelector('.email-card');
+    const phoneCard = document.querySelector('.phone-card');
+    
+    if (emailCard) {
+        emailCard.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            this.classList.add('touched');
+        });
+        
+        emailCard.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            this.classList.remove('touched');
+            sendEmail();
+        });
+    }
+    
+    if (phoneCard) {
+        phoneCard.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            this.classList.add('touched');
+        });
+        
+        phoneCard.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            this.classList.remove('touched');
+            makeCall();
+        });
+    }
+    
+    // Add click event listeners for desktop contact cards
+    const emailCards = document.querySelectorAll('.email-card');
+    const phoneCards = document.querySelectorAll('.phone-card');
+    
+    emailCards.forEach(card => {
+        card.addEventListener('click', sendEmail);
+    });
+    
+    phoneCards.forEach(card => {
+        card.addEventListener('click', makeCall);
     });
 });
 
