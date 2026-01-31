@@ -228,8 +228,8 @@ const RECAPTCHA_CONFIG = {
 function downloadResume() {
     // Create a temporary anchor element
     const downloadLink = document.createElement('a');
-    downloadLink.href = 'assets/pdf/resume.pdf';
-    downloadLink.download = 'resume.pdf';
+    downloadLink.href = 'assets/pdf/my_resume.pdf';
+    downloadLink.download = 'my_resume.pdf';
     downloadLink.target = '_blank';
     
     // Append to body, click, and remove
@@ -885,7 +885,7 @@ function sendEmail() {
 }
 
 function makeCall() {
-    const phoneNumber = '+639123456789'; // Remove spaces for proper tel: link
+    const phoneNumber = '+639380355961'; // Remove spaces for proper tel: link
     
     // Create tel link
     const telLink = `tel:${phoneNumber}`;
@@ -1150,4 +1150,3 @@ window.addEventListener('scroll', () => {
     // Update scroll to top button visibility
     toggleScrollToTopButton();
 });
-
