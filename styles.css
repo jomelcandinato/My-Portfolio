@@ -1677,6 +1677,83 @@ section.visible {
 }
 
 /* ============================================= */
+/* PROJECT TAGS STYLES - NEW ADDITION */
+/* ============================================= */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-tag {
+    background: linear-gradient(135deg, #4A90E2, #50E3C2);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.project-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3);
+}
+
+.work-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+}
+
+.work-tag {
+    background: linear-gradient(135deg, #4A90E2, #50E3C2);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.work-tag:hover {
+    transform: translateY(-1px);
+}
+
+/* Modal Footer Links */
+.modal-footer a {
+    color: #0b1521;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.modal-footer a:hover {
+    color: #efff10;
+    text-decoration: underline;
+}
+
+/* Cursor pointer for Figma projects */
+[data-figma-link] {
+    cursor: pointer;
+}
+
+[data-figma-link]:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(74, 144, 226, 0.3);
+}
+
+/* ============================================= */
 /* MOBILE RESPONSIVE STYLES - UPDATED */
 /* ============================================= */
 
@@ -2075,6 +2152,26 @@ section.visible {
         height: 300px;
     }
     
+    /* Project Tags Mobile */
+    .project-tags {
+        gap: 0.4rem;
+    }
+    
+    .project-tag {
+        padding: 0.2rem 0.6rem;
+        font-size: 0.7rem;
+    }
+    
+    .work-tags {
+        gap: 0.3rem;
+        margin-top: 0.4rem;
+    }
+    
+    .work-tag {
+        padding: 0.15rem 0.5rem;
+        font-size: 0.6rem;
+    }
+    
     /* Hobbies Section Mobile Styles */
     .hobbies-container {
         grid-template-columns: 1fr;
@@ -2337,6 +2434,26 @@ section.visible {
     .filter-btn {
         padding: 0.5rem 1rem;
         font-size: 0.85rem;
+    }
+    
+    /* Project Tags Very Small Screen */
+    .project-tags {
+        gap: 0.3rem;
+    }
+    
+    .project-tag {
+        padding: 0.15rem 0.5rem;
+        font-size: 0.65rem;
+    }
+    
+    .work-tags {
+        gap: 0.25rem;
+        margin-top: 0.3rem;
+    }
+    
+    .work-tag {
+        padding: 0.1rem 0.4rem;
+        font-size: 0.55rem;
     }
     
     /* Hobbies Section Small Screen */
