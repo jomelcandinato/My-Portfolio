@@ -1,4 +1,4 @@
-// Sample Works Data - 12 webinars + 2 projects = 14 total
+// Sample Works Data - 12 webinars + 4 projects = 16 total
 const worksData = [
     {
         id: 1,
@@ -35,7 +35,7 @@ const worksData = [
         image: "assets/images/istrelwebinar3.png",
         description: "September 29, 2024"
     },
-     {
+    {
         id: 6,
         title: "Promoting STEM Education through Innovative and Emerging Technologies towards Global Competitiveness",
         category: "webinars",
@@ -86,22 +86,44 @@ const worksData = [
         image: "assets/images/WVSUcert2.png",
         description: "October 17, 2025"
     },
-    // New Projects (2 items)
+    // New Projects (4 items)
     {
         id: 13,
         title: "NewsHub: A Global and Local News Aggregation Platform",
         category: "projects",
         image: "assets/images/newshub.png",
         description: "A final project for the subject 'Integrative Programming & Technologies' featuring real-time access to global and local news.",
-        pdf: "assets/pdf/newshub.pdf"
+        pdf: "assets/pdf/newshub.pdf",
+        tags: ["ReactJS", "HTML", "CSS", "SQL"]
     },
     {
         id: 14,
+        title: "NewsHub Prototype",
+        category: "projects",
+        image: "assets/images/newshub_prototype.png",
+        description: "A Figma prototype showcasing the user interface and user experience design for our 'NewsHub' project.",
+        figmaLink: "https://www.figma.com/proto/nHJZAMGLmYkjINUp0xiocD/NewsHub-Prototype?node-id=4-489&p=f&t=NLtz7jLOvnSty5E5-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A9936",
+        tags: ["Figma"]
+    },
+    {
+        id: 15,
+        title: "Web-Based Document Request System",
+        category: "projects",
+        image: "assets/images/capstone.png",
+        description: "A Capstone Project designed to streamline document request processes with automated workflows and user management.",
+        pdf: "assets/pdf/capstone.pdf",
+        tags: ["PHP", "HTML", "CSS", "JavaScript", "SQL"],
+        footerDescription: "The complete copy of source code for our Capstone project is available with our Lead Developer. You can send a request to this",
+        contactEmail: "mailto:noverojeremy1@gmail.com"
+    },
+    {
+        id: 16,
         title: "Personal Portfolio Website",
         category: "projects",
         image: "assets/images/portfolio.png",
-        description: "A modern and responsive portfolio website.",
-        iframe: "index.html"
+        description: "A modern and responsive portfolio website showcasing projects and skills.",
+        iframe: "index.html",
+        tags: ["HTML", "CSS", "JavaScript"]
     }
 ];
 
@@ -301,15 +323,36 @@ function scrollToTop() {
     });
 }
 
+// Create a work item element
+function createWorkItem(work) {
+    const workItem = document.createElement('div');
+    workItem.className = 'work-item animate-text';
+    
+    // Check if it's a Figma link project
+    if (work.figmaLink) {
+        workItem.setAttribute('data-figma-link', work.figmaLink);
+    }
+    
+    workItem.innerHTML = `
+        <img src="${work.image}" alt="${work.title}" loading="lazy">
+        <div class="work-item-content">
+            <h3>${work.title}</h3>
+            <p>${work.description}</p>
+            ${work.tags ? `<div class="work-tags">${work.tags.map(tag => `<span class="work-tag">${tag}</span>`).join('')}</div>` : ''}
+        </div>
+    `;
+    return workItem;
+}
+
 // Initialize Works Grid (Desktop) and Mobile Scroll (Mobile)
 function renderWorks(filter = 'all') {
     // Filter works based on selected category
     let filteredWorks = [];
     
     if (filter === 'all') {
-        filteredWorks = worksData; // Show all 14 items
+        filteredWorks = worksData; // Show all 16 items
     } else if (filter === 'projects') {
-        filteredWorks = worksData.filter(work => work.category === 'projects'); // Show 2 projects
+        filteredWorks = worksData.filter(work => work.category === 'projects'); // Show 4 projects
     } else if (filter === 'webinars') {
         filteredWorks = worksData.filter(work => work.category === 'webinars'); // Show 12 webinars
     }
@@ -324,7 +367,17 @@ function renderWorks(filter = 'all') {
     // Render Desktop Grid View
     filteredWorks.forEach((work, index) => {
         const workItem = createWorkItem(work);
-        workItem.addEventListener('click', () => openModal(work));
+        
+        if (work.figmaLink) {
+            // For Figma projects, open link in new tab
+            workItem.addEventListener('click', () => {
+                window.open(work.figmaLink, '_blank');
+            });
+        } else {
+            // For other projects, open modal
+            workItem.addEventListener('click', () => openModal(work));
+        }
+        
         worksGrid.appendChild(workItem);
         
         // Add animation delay for smooth appearance
@@ -336,24 +389,20 @@ function renderWorks(filter = 'all') {
     // Render Mobile Horizontal Scroll View
     filteredWorks.forEach((work) => {
         const workItem = createWorkItem(work);
-        workItem.addEventListener('click', () => openModal(work));
+        
+        if (work.figmaLink) {
+            // For Figma projects, open link in new tab
+            workItem.addEventListener('click', () => {
+                window.open(work.figmaLink, '_blank');
+            });
+        } else {
+            // For other projects, open modal
+            workItem.addEventListener('click', () => openModal(work));
+        }
+        
         workItem.classList.add('visible'); // Make immediately visible for mobile
         mobileScrollTrack.appendChild(workItem);
     });
-}
-
-// Create a work item element
-function createWorkItem(work) {
-    const workItem = document.createElement('div');
-    workItem.className = 'work-item animate-text';
-    workItem.innerHTML = `
-        <img src="${work.image}" alt="${work.title}" loading="lazy">
-        <div class="work-item-content">
-            <h3>${work.title}</h3>
-            <p>${work.description}</p>
-        </div>
-    `;
-    return workItem;
 }
 
 // Filter Functionality
@@ -434,13 +483,18 @@ function prevPhoto() {
 function openModal(work) {
     const modalContent = document.querySelector('.modal-content');
     
-    if (work.iframe) {
+    if (work.figmaLink) {
+        // For Figma prototype, open in new tab
+        window.open(work.figmaLink, '_blank');
+        return; // Don't show modal for Figma links
+    } else if (work.iframe) {
         // For portfolio project, display iframe in larger modal
         modalContent.classList.add('project-modal', 'large-modal', 'iframe-modal');
         modalBody.innerHTML = `
             <div class="modal-header">
                 <h3>${work.title}</h3>
                 <p class="modal-description">${work.description}</p>
+                ${work.tags ? `<div class="project-tags">${work.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}</div>` : ''}
             </div>
             <div class="modal-content-area">
                 <iframe src="${work.iframe}" class="portfolio-iframe"></iframe>
@@ -453,12 +507,17 @@ function openModal(work) {
             <div class="modal-header">
                 <h3>${work.title}</h3>
                 <p class="modal-description">${work.description}</p>
+                ${work.tags ? `<div class="project-tags">${work.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}</div>` : ''}
             </div>
             <div class="modal-content-area">
                 <iframe src="${work.pdf}" class="pdf-viewer"></iframe>
             </div>
             <div class="modal-footer">
-                <p> For local testing and setup, the source code for NewsHub is available on my <a href="https://github.com/jomelcandinato"> GitHub </a> repository. </p>
+                ${work.footerDescription ? `
+                    <p>${work.footerDescription} <a href="${work.contactEmail || 'mailto:noverojeremy1@gmail.com  '}">GMail</a> account.</p>
+                ` : `
+                    <p>For local testing and setup, the source code for ${work.title.includes('NewsHub') ? 'NewsHub' : 'this project'} is available on my <a href="https://github.com/jomelcandinato">GitHub</a> repository.</p>
+                `}
             </div>
         `;
     } else if (work.originalSize) {
