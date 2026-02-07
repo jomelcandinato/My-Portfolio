@@ -1152,54 +1152,13 @@ section.visible {
     transform: translateX(-50%) translateY(-5px);
 }
 
-/* Captcha and Buttons Container */
-.captcha-buttons-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-top: 0.5px;
-    width: 100%;
-}
-
-/* Captcha Wrapper - Left side on desktop */
-.captcha-wrapper {
-    flex: 1;
-    min-width: 300px;
-    max-width: 300px;
-}
-
-/* reCAPTCHA Styles */
-.g-recaptcha {
-    margin: 0;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.g-recaptcha > div {
-    transform: scale(0.95);
-    transform-origin: left center;
-}
-
-/* reCAPTCHA error styling */
-#recaptcha-error {
-    animation: shake 0.5s ease-in-out;
-}
-
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
-}
-
 /* Buttons Wrapper - Right side on desktop */
 .buttons-wrapper {
-    flex: 1;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    width: auto !important;
+    width: 100%;
+    margin-top: 1rem;
 }
 
 .form-buttons {
@@ -1209,7 +1168,7 @@ section.visible {
     justify-content: flex-end;
     align-items: center;
     flex-wrap: nowrap;
-    width: auto;
+    width: 100%;
 }
 
 #sendMessageBtn {
@@ -1943,36 +1902,13 @@ section.visible {
         font-size: 1.1rem;
     }
     
-    /* Captcha and Buttons Container - Mobile: Stack vertically */
-    .captcha-buttons-container {
-        flex-direction: column;
-        gap: 1.0rem;
-        margin: 0.5rem 0;
-        width: 100%;
-        max-width: 500px;
-    }
-    
-    /* Captcha Wrapper - Mobile: Full width */
-    .captcha-wrapper {
-        width: auto;
-        max-width: 400px;
-        min-width: auto;
-    }
-    
-    /* reCAPTCHA Mobile Styles */
-    .g-recaptcha {
-        transform: scale(0.9);
-        transform-origin: left center;
-        margin: 0.5rem 0;
-        justify-content: center;
-    }
-    
     /* Buttons Wrapper - Mobile: Full width, centered */
     .buttons-wrapper {
         width: 100%;
         max-width: 500px;
         min-width: auto;
         justify-content: center;
+        margin-top: 1rem;
     }
     
     /* Form Buttons - Horizontal on Mobile */
@@ -2379,12 +2315,6 @@ section.visible {
     .form-control {
         padding: 0.75rem;
         font-size: 1rem;
-    }
-    
-    /* reCAPTCHA Small Screen */
-    .g-recaptcha {
-        transform: scale(0.85);
-        transform-origin: left center;
     }
     
     /* Form Buttons - Smaller on very small screens */
