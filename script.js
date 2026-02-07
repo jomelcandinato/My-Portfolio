@@ -1,220 +1,236 @@
 // Sample Works Data - 12 webinars + 4 projects = 16 total
 const worksData = [
-    {
-        id: 1,
-        title: "Cybersecurity Armor: Shielding Your Data in the Digital Age",
-        category: "webinars",
-        image: "assets/images/jpcswebinar1.png",
-        description: "October 19, 2023"
-    },
-    {
-        id: 2,
-        title: "Mastering Your Final Defense: Strategies and Tips for Research Success",
-        category: "webinars",
-        image: "assets/images/jpcswebinar2.png",
-        description: "April 13, 2024"
-    },
-    {
-        id: 3,
-        title: "Navigating the Waves of Change: The Role of Business and Social Sciences in Today's Dynamic Environment",
-        category: "webinars",
-        image: "assets/images/istrelwebinar1.png",
-        description: "August 25, 2024"
-    },
-    {
-        id: 4,
-        title: "Data Science and Artificial Intelligence: Trends, Applications, and Prospects",
-        category: "webinars",
-        image: "assets/images/istrelwebinar2.png",
-        description: "August 25, 2024"
-    },
-    {
-        id: 5,
-        title: "Empowering Students through Research and Development",
-        category: "webinars",
-        image: "assets/images/istrelwebinar3.png",
-        description: "September 29, 2024"
-    },
-    {
-        id: 6,
-        title: "Promoting STEM Education through Innovative and Emerging Technologies towards Global Competitiveness",
-        category: "webinars",
-        image: "assets/images/istrelwebinar4.png",
-        description: "October 29, 2024",
-        originalSize: true
-    },
-    {
-        id: 7,
-        title: "The Future of Basic and Higher Education in the Philippines for the Fifth Industrial Revolution",
-        category: "webinars",
-        image: "assets/images/istrelwebinar5.png",
-        description: "October 29, 2024",
-        originalSize: true
-    },
-    {
-        id: 8,
-        title: "Introduction to Linux Basics",
-        category: "webinars",
-        image: "assets/images/linuxcert.png",
-        description: "October 15, 2025"
-    },
-    {
-        id: 9,
-        title: "Introduction to Cyber Security",
-        category: "webinars",
-        image: "assets/images/cybersecuritycert.png",
-        description: "October 15, 2025"
-    },
-    {
-        id: 10,
-        title: "IT for Business Success",
-        category: "webinars",
-        image: "assets/images/hplifecert.png",
-        description: "October 15, 2025"
-    },
-    {
-        id: 11,
-        title: "Cybersecurity Career Insights: Building a Path in the Digital World",
-        category: "webinars",
-        image: "assets/images/WVSUcert1.png",
-        description: "October 17, 2025"
-    },
-    {
-        id: 12,
-        title: "DevSecOps: Integrating Security into the Software Development Life Cycle",
-        category: "webinars",
-        image: "assets/images/WVSUcert2.png",
-        description: "October 17, 2025"
-    },
-    // New Projects (4 items)
-    {
-        id: 13,
-        title: "NewsHub: A Global and Local News Aggregation Platform",
-        category: "projects",
-        image: "assets/images/newshub.png",
-        description: "A final project for the subject 'Integrative Programming & Technologies' featuring real-time access to global and local news.",
-        pdf: "assets/pdf/newshub.pdf",
-        tags: ["ReactJS", "HTML", "CSS", "SQL"]
-    },
-    {
-        id: 14,
-        title: "NewsHub Prototype",
-        category: "projects",
-        image: "assets/images/newshub_prototype.png",
-        description: "A Figma prototype showcasing the user interface and user experience design for our 'NewsHub' project.",
-        figmaLink: "https://www.figma.com/proto/nHJZAMGLmYkjINUp0xiocD/NewsHub-Prototype?node-id=4-489&p=f&t=NLtz7jLOvnSty5E5-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A9936",
-        tags: ["Figma"]
-    },
-    {
-        id: 15,
-        title: "Web-Based Document Request System",
-        category: "projects",
-        image: "assets/images/capstone.png",
-        description: "A Capstone Project designed to streamline document request processes with automated workflows and user management.",
-        pdf: "assets/pdf/capstone.pdf",
-        tags: ["PHP", "HTML", "CSS", "JavaScript", "SQL"],
-        footerDescription: "The complete copy of source code for our Capstone project is available with our Lead Developer. You can send a request to this",
-        contactEmail: "mailto:noverojeremy1@gmail.com"
-    },
-    {
-        id: 16,
-        title: "Personal Portfolio Website",
-        category: "projects",
-        image: "assets/images/portfolio.png",
-        description: "A modern and responsive portfolio website showcasing projects and skills.",
-        iframe: "index.html",
-        tags: ["HTML", "CSS", "JavaScript"]
-    }
+  {
+    id: 1,
+    title: "Cybersecurity Armor: Shielding Your Data in the Digital Age",
+    category: "webinars",
+    image: "assets/images/jpcswebinar1.png",
+    description: "October 19, 2023",
+  },
+  {
+    id: 2,
+    title:
+      "Mastering Your Final Defense: Strategies and Tips for Research Success",
+    category: "webinars",
+    image: "assets/images/jpcswebinar2.png",
+    description: "April 13, 2024",
+  },
+  {
+    id: 3,
+    title:
+      "Navigating the Waves of Change: The Role of Business and Social Sciences in Today's Dynamic Environment",
+    category: "webinars",
+    image: "assets/images/istrelwebinar1.png",
+    description: "August 25, 2024",
+  },
+  {
+    id: 4,
+    title:
+      "Data Science and Artificial Intelligence: Trends, Applications, and Prospects",
+    category: "webinars",
+    image: "assets/images/istrelwebinar2.png",
+    description: "August 25, 2024",
+  },
+  {
+    id: 5,
+    title: "Empowering Students through Research and Development",
+    category: "webinars",
+    image: "assets/images/istrelwebinar3.png",
+    description: "September 29, 2024",
+  },
+  {
+    id: 6,
+    title:
+      "Promoting STEM Education through Innovative and Emerging Technologies towards Global Competitiveness",
+    category: "webinars",
+    image: "assets/images/istrelwebinar4.png",
+    description: "October 29, 2024",
+    originalSize: true,
+  },
+  {
+    id: 7,
+    title:
+      "The Future of Basic and Higher Education in the Philippines for the Fifth Industrial Revolution",
+    category: "webinars",
+    image: "assets/images/istrelwebinar5.png",
+    description: "October 29, 2024",
+    originalSize: true,
+  },
+  {
+    id: 8,
+    title: "Introduction to Linux Basics",
+    category: "webinars",
+    image: "assets/images/linuxcert.png",
+    description: "October 15, 2025",
+  },
+  {
+    id: 9,
+    title: "Introduction to Cyber Security",
+    category: "webinars",
+    image: "assets/images/cybersecuritycert.png",
+    description: "October 15, 2025",
+  },
+  {
+    id: 10,
+    title: "IT for Business Success",
+    category: "webinars",
+    image: "assets/images/hplifecert.png",
+    description: "October 15, 2025",
+  },
+  {
+    id: 11,
+    title:
+      "Cybersecurity Career Insights: Building a Path in the Digital World",
+    category: "webinars",
+    image: "assets/images/WVSUcert1.png",
+    description: "October 17, 2025",
+  },
+  {
+    id: 12,
+    title:
+      "DevSecOps: Integrating Security into the Software Development Life Cycle",
+    category: "webinars",
+    image: "assets/images/WVSUcert2.png",
+    description: "October 17, 2025",
+  },
+  // New Projects (4 items)
+  {
+    id: 13,
+    title: "NewsHub: A Global and Local News Aggregation Platform",
+    category: "projects",
+    image: "assets/images/newshub.png",
+    description:
+      "A final project for the subject 'Integrative Programming & Technologies' featuring real-time access to global and local news.",
+    pdf: "assets/pdf/newshub.pdf",
+    tags: ["ReactJS", "HTML", "CSS", "SQL"],
+  },
+  {
+    id: 14,
+    title: "NewsHub Prototype",
+    category: "projects",
+    image: "assets/images/newshub_prototype.png",
+    description:
+      "A Figma prototype showcasing the user interface and user experience design for our 'NewsHub' project.",
+    figmaLink:
+      "https://www.figma.com/proto/nHJZAMGLmYkjINUp0xiocD/NewsHub-Prototype?node-id=4-489&p=f&t=NLtz7jLOvnSty5E5-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A9936",
+    tags: ["Figma"],
+  },
+  {
+    id: 15,
+    title: "Web-Based Document Request System",
+    category: "projects",
+    image: "assets/images/capstone.png",
+    description:
+      "A Capstone Project designed to streamline document request processes with automated workflows and user management.",
+    pdf: "assets/pdf/capstone.pdf",
+    tags: ["PHP", "HTML", "CSS", "JavaScript", "SQL"],
+    footerDescription:
+      "The complete copy of source code for our Capstone project is available with our Lead Developer. You can send a request to this",
+    contactEmail: "mailto:noverojeremy1@gmail.com",
+  },
+  {
+    id: 16,
+    title: "Personal Portfolio Website",
+    category: "projects",
+    image: "assets/images/portfolio.png",
+    description:
+      "A modern and responsive portfolio website showcasing projects and skills.",
+    iframe: "index.html",
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
 ];
 
 // Hobbies Data - Replace with your actual photo paths
 const hobbiesData = {
-    photography: {
-        title: "Photography",
-        count: 10,
-        description: "Capturing moments and scenes that tell stories through my lens.",
-        photos: [
-            "assets/hobbies/photography/photography1.png",
-            "assets/hobbies/photography/photography2.png",
-            "assets/hobbies/photography/photography3.png",
-            "assets/hobbies/photography/photography4.png",
-            "assets/hobbies/photography/photography5.png",
-            "assets/hobbies/photography/photography6.png",
-            "assets/hobbies/photography/photography7.png",
-            "assets/hobbies/photography/photography8.png",
-            "assets/hobbies/photography/photography9.png",
-            "assets/hobbies/photography/photography10.png"
-        ]
-    },
-    drawing: {
-        title: "Drawing",
-        count: 5,
-        description: "Expressing creativity through sketches and digital art.",
-        photos: [
-            "assets/hobbies/drawing/drawing1.png",
-            "assets/hobbies/drawing/drawing2.png",
-            "assets/hobbies/drawing/drawing3.png",
-            "assets/hobbies/drawing/drawing4.png",
-            "assets/hobbies/drawing/drawing5.png"
-        ]
-    },
-    exercise: {
-        title: "Working Out",
-        count: 5,
-        description: "Staying fit and healthy through regular workouts and physical activities.",
-        photos: [
-            "assets/hobbies/exercising/exercise1.png",
-            "assets/hobbies/exercising/exercise2.png",
-            "assets/hobbies/exercising/exercise3.png",
-            "assets/hobbies/exercising/exercise4.png",
-            "assets/hobbies/exercising/exercise5.png"
-        ]
-    },
-    chess: {
-        title: "Chess",
-        count: 4,
-        description: "Strategic thinking and mental exercise through the game of kings.",
-        photos: [
-            "assets/hobbies/chess/chess1.png",
-            "assets/hobbies/chess/chess2.png",
-            "assets/hobbies/chess/chess3.png",
-            "assets/hobbies/chess/chess4.png"
-        ]
-    }
+  photography: {
+    title: "Photography",
+    count: 10,
+    description:
+      "Capturing moments and scenes that tell stories through my lens.",
+    photos: [
+      "assets/hobbies/photography/photography1.png",
+      "assets/hobbies/photography/photography2.png",
+      "assets/hobbies/photography/photography3.png",
+      "assets/hobbies/photography/photography4.png",
+      "assets/hobbies/photography/photography5.png",
+      "assets/hobbies/photography/photography6.png",
+      "assets/hobbies/photography/photography7.png",
+      "assets/hobbies/photography/photography8.png",
+      "assets/hobbies/photography/photography9.png",
+      "assets/hobbies/photography/photography10.png",
+    ],
+  },
+  drawing: {
+    title: "Drawing",
+    count: 5,
+    description: "Expressing creativity through sketches and digital art.",
+    photos: [
+      "assets/hobbies/drawing/drawing1.png",
+      "assets/hobbies/drawing/drawing2.png",
+      "assets/hobbies/drawing/drawing3.png",
+      "assets/hobbies/drawing/drawing4.png",
+      "assets/hobbies/drawing/drawing5.png",
+    ],
+  },
+  exercise: {
+    title: "Working Out",
+    count: 5,
+    description:
+      "Staying fit and healthy through regular workouts and physical activities.",
+    photos: [
+      "assets/hobbies/exercising/exercise1.png",
+      "assets/hobbies/exercising/exercise2.png",
+      "assets/hobbies/exercising/exercise3.png",
+      "assets/hobbies/exercising/exercise4.png",
+      "assets/hobbies/exercising/exercise5.png",
+    ],
+  },
+  chess: {
+    title: "Chess",
+    count: 4,
+    description:
+      "Strategic thinking and mental exercise through the game of kings.",
+    photos: [
+      "assets/hobbies/chess/chess1.png",
+      "assets/hobbies/chess/chess2.png",
+      "assets/hobbies/chess/chess3.png",
+      "assets/hobbies/chess/chess4.png",
+    ],
+  },
 };
 
 // DOM Elements
-const worksGrid = document.getElementById('works-grid');
-const mobileScrollTrack = document.getElementById('mobile-scroll-track');
-const filterBtns = document.querySelectorAll('.filter-btn');
-const modal = document.getElementById('modal');
-const modalBody = document.getElementById('modal-body');
-const closeBtn = document.querySelector('.close');
-const closeResumeBtn = document.querySelector('.close-resume');
-const closeHobbiesBtn = document.querySelector('.close-hobbies');
-const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('section');
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const contactForm = document.getElementById('contactFormElement');
-const footer = document.querySelector('.footer');
-const resetFormBtn = document.getElementById('resetForm');
-const sendMessageBtn = document.getElementById('sendMessageBtn');
-const sendText = document.getElementById('sendText');
-const sendingText = document.getElementById('sendingText');
-const scrollToTopBtn = document.getElementById('scrollToTop');
-const formMessage = document.getElementById('formMessage');
-const viewResumeBtn = document.getElementById('viewResumeBtn');
-const resumeModal = document.getElementById('resumeModal');
-const resumeViewer = document.getElementById('resumeViewer');
-const hobbiesModal = document.getElementById('hobbiesModal');
-const hobbyModalTitle = document.getElementById('hobbyModalTitle');
-const hobbyModalCount = document.getElementById('hobbyModalCount');
-const hobbyGallery = document.getElementById('hobbyGallery');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const galleryCounter = document.getElementById('galleryCounter');
-const skillItems = document.querySelectorAll('.skill-item');
+const worksGrid = document.getElementById("works-grid");
+const mobileScrollTrack = document.getElementById("mobile-scroll-track");
+const filterBtns = document.querySelectorAll(".filter-btn");
+const modal = document.getElementById("modal");
+const modalBody = document.getElementById("modal-body");
+const closeBtn = document.querySelector(".close");
+const closeResumeBtn = document.querySelector(".close-resume");
+const closeHobbiesBtn = document.querySelector(".close-hobbies");
+const navLinks = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section");
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+const contactForm = document.getElementById("contactFormElement");
+const footer = document.querySelector(".footer");
+const resetFormBtn = document.getElementById("resetForm");
+const sendMessageBtn = document.getElementById("sendMessageBtn");
+const sendText = document.getElementById("sendText");
+const sendingText = document.getElementById("sendingText");
+const scrollToTopBtn = document.getElementById("scrollToTop");
+const formMessage = document.getElementById("formMessage");
+const viewResumeBtn = document.getElementById("viewResumeBtn");
+const resumeModal = document.getElementById("resumeModal");
+const resumeViewer = document.getElementById("resumeViewer");
+const hobbiesModal = document.getElementById("hobbiesModal");
+const hobbyModalTitle = document.getElementById("hobbyModalTitle");
+const hobbyModalCount = document.getElementById("hobbyModalCount");
+const hobbyGallery = document.getElementById("hobbyGallery");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const galleryCounter = document.getElementById("galleryCounter");
+const skillItems = document.querySelectorAll(".skill-item");
 
 // Track which sections have been animated
 const animatedSections = new Set();
@@ -223,308 +239,303 @@ const animatedSections = new Set();
 let currentHobby = null;
 let currentPhotoIndex = 0;
 
-// EmailJS Configuration - REPLACE WITH YOUR ACTUAL CREDENTIALS
-const EMAILJS_CONFIG = {
-    USER_ID: 'oWFKTI1llhK7JkmUe', // Replace with your EmailJS Public Key
-    SERVICE_ID: 'service_lr6shks', // Replace with your Service ID
-    TEMPLATE_ID: 'template_97oidgk' // Replace with your Template ID
+// Configuration that will be loaded from server
+let CONFIG = {
+  EMAILJS: {},
+  RECAPTCHA: {},
 };
-
-// reCAPTCHA Configuration
-const RECAPTCHA_CONFIG = {
-    SITE_KEY: '6LdtolQsAAAAALiYiZLjwnqyG2gaZdsMY63rYvte', // Your reCAPTCHA Site Key
-    SECRET_KEY: '6LdtolQsAAAAAIVOoeyKEYSPYADio-5dblvxWbxp' // Your reCAPTCHA Secret Key (for server-side verification)
-};
-
-// Initialize EmailJS
-(function() {
-    if (EMAILJS_CONFIG.USER_ID !== 'YOUR_EMAILJS_USER_ID') {
-        emailjs.init(EMAILJS_CONFIG.USER_ID);
-        console.log('EmailJS initialized with User ID:', EMAILJS_CONFIG.USER_ID.substring(0, 10) + '...');
-    } else {
-        console.warn('Please update EmailJS credentials in script.js');
-    }
-})();
 
 // PDF Download Functionality
 function downloadResume() {
-    // Create a temporary anchor element
-    const downloadLink = document.createElement('a');
-    downloadLink.href = 'assets/pdf/jomel_resume.pdf';
-    downloadLink.download = 'jomel_resume.pdf';
-    downloadLink.target = '_blank';
-    
-    // Append to body, click, and remove
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
+  // Create a temporary anchor element
+  const downloadLink = document.createElement("a");
+  downloadLink.href = "assets/pdf/jomel_resume.pdf";
+  downloadLink.download = "jomel_resume.pdf";
+  downloadLink.target = "_blank";
+
+  // Append to body, click, and remove
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
 }
 
 // Enhanced Intersection Observer for smooth animations
-const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateSection(entry.target);
-            animatedSections.add(entry.target.id);
-        } else {
-            // Reset animation when section leaves viewport
-            resetSectionAnimations(entry.target);
-        }
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateSection(entry.target);
+        animatedSections.add(entry.target.id);
+      } else {
+        // Reset animation when section leaves viewport
+        resetSectionAnimations(entry.target);
+      }
     });
-}, { 
+  },
+  {
     threshold: 0.1,
-    rootMargin: '-50px 0px -50px 0px'
-});
+    rootMargin: "-50px 0px -50px 0px",
+  },
+);
 
 // Function to animate a section (used by both scroll and click)
 function animateSection(section) {
-    // Add visible class to section
-    section.classList.add('visible');
-    
-    // Animate child elements with staggered delay
-    const animateElements = section.querySelectorAll('.animate-text');
-    animateElements.forEach((element, index) => {
-        setTimeout(() => {
-            element.classList.add('visible');
-        }, index * 150);
-    });
+  // Add visible class to section
+  section.classList.add("visible");
+
+  // Animate child elements with staggered delay
+  const animateElements = section.querySelectorAll(".animate-text");
+  animateElements.forEach((element, index) => {
+    setTimeout(() => {
+      element.classList.add("visible");
+    }, index * 150);
+  });
 }
 
 // Function to reset section animations
 function resetSectionAnimations(section) {
-    section.classList.remove('visible');
-    const animateElements = section.querySelectorAll('.animate-text');
-    animateElements.forEach(element => {
-        element.classList.remove('visible');
-    });
-    animatedSections.delete(section.id);
+  section.classList.remove("visible");
+  const animateElements = section.querySelectorAll(".animate-text");
+  animateElements.forEach((element) => {
+    element.classList.remove("visible");
+  });
+  animatedSections.delete(section.id);
 }
 
 // Observe all sections
-sections.forEach(section => {
-    if (section.id !== 'hero') { // Hero is already animated on load
-        sectionObserver.observe(section);
-    }
+sections.forEach((section) => {
+  if (section.id !== "hero") {
+    // Hero is already animated on load
+    sectionObserver.observe(section);
+  }
 });
 
 // Scroll to Top Functionality
 function toggleScrollToTopButton() {
-    if (window.pageYOffset > 300) {
-        scrollToTopBtn.classList.add('visible');
-    } else {
-        scrollToTopBtn.classList.remove('visible');
-    }
+  if (window.pageYOffset > 300) {
+    scrollToTopBtn.classList.add("visible");
+  } else {
+    scrollToTopBtn.classList.remove("visible");
+  }
 }
 
 function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 }
 
 // Create a work item element
 function createWorkItem(work) {
-    const workItem = document.createElement('div');
-    workItem.className = 'work-item animate-text';
-    
-    // Check if it's a Figma link project
-    if (work.figmaLink) {
-        workItem.setAttribute('data-figma-link', work.figmaLink);
-    }
-    
-    workItem.innerHTML = `
+  const workItem = document.createElement("div");
+  workItem.className = "work-item animate-text";
+
+  // Check if it's a Figma link project
+  if (work.figmaLink) {
+    workItem.setAttribute("data-figma-link", work.figmaLink);
+  }
+
+  workItem.innerHTML = `
         <img src="${work.image}" alt="${work.title}" loading="lazy">
         <div class="work-item-content">
             <h3>${work.title}</h3>
             <p>${work.description}</p>
-            ${work.tags ? `<div class="work-tags">${work.tags.map(tag => `<span class="work-tag">${tag}</span>`).join('')}</div>` : ''}
+            ${work.tags ? `<div class="work-tags">${work.tags.map((tag) => `<span class="work-tag">${tag}</span>`).join("")}</div>` : ""}
         </div>
     `;
-    return workItem;
+  return workItem;
 }
 
 // Initialize Works Grid (Desktop) and Mobile Scroll (Mobile)
-function renderWorks(filter = 'all') {
-    // Filter works based on selected category
-    let filteredWorks = [];
-    
-    if (filter === 'all') {
-        filteredWorks = worksData; // Show all 16 items
-    } else if (filter === 'projects') {
-        filteredWorks = worksData.filter(work => work.category === 'projects'); // Show 4 projects
-    } else if (filter === 'webinars') {
-        filteredWorks = worksData.filter(work => work.category === 'webinars'); // Show 12 webinars
+function renderWorks(filter = "all") {
+  // Filter works based on selected category
+  let filteredWorks = [];
+
+  if (filter === "all") {
+    filteredWorks = worksData; // Show all 16 items
+  } else if (filter === "projects") {
+    filteredWorks = worksData.filter((work) => work.category === "projects"); // Show 4 projects
+  } else if (filter === "webinars") {
+    filteredWorks = worksData.filter((work) => work.category === "webinars"); // Show 12 webinars
+  }
+
+  console.log(`Filter: ${filter}, Works count: ${filteredWorks.length}`);
+  console.log("Filtered works:", filteredWorks);
+
+  // Clear existing content
+  worksGrid.innerHTML = "";
+  mobileScrollTrack.innerHTML = "";
+
+  // Render Desktop Grid View
+  filteredWorks.forEach((work, index) => {
+    const workItem = createWorkItem(work);
+
+    if (work.figmaLink) {
+      // For Figma projects, open link in new tab
+      workItem.addEventListener("click", () => {
+        window.open(work.figmaLink, "_blank");
+      });
+    } else {
+      // For other projects, open modal
+      workItem.addEventListener("click", () => openModal(work));
     }
-    
-    console.log(`Filter: ${filter}, Works count: ${filteredWorks.length}`);
-    console.log('Filtered works:', filteredWorks);
-    
-    // Clear existing content
-    worksGrid.innerHTML = '';
-    mobileScrollTrack.innerHTML = '';
-    
-    // Render Desktop Grid View
-    filteredWorks.forEach((work, index) => {
-        const workItem = createWorkItem(work);
-        
-        if (work.figmaLink) {
-            // For Figma projects, open link in new tab
-            workItem.addEventListener('click', () => {
-                window.open(work.figmaLink, '_blank');
-            });
-        } else {
-            // For other projects, open modal
-            workItem.addEventListener('click', () => openModal(work));
-        }
-        
-        worksGrid.appendChild(workItem);
-        
-        // Add animation delay for smooth appearance
-        setTimeout(() => {
-            workItem.classList.add('visible');
-        }, index * 150);
-    });
-    
-    // Render Mobile Horizontal Scroll View
-    filteredWorks.forEach((work) => {
-        const workItem = createWorkItem(work);
-        
-        if (work.figmaLink) {
-            // For Figma projects, open link in new tab
-            workItem.addEventListener('click', () => {
-                window.open(work.figmaLink, '_blank');
-            });
-        } else {
-            // For other projects, open modal
-            workItem.addEventListener('click', () => openModal(work));
-        }
-        
-        workItem.classList.add('visible'); // Make immediately visible for mobile
-        mobileScrollTrack.appendChild(workItem);
-    });
+
+    worksGrid.appendChild(workItem);
+
+    // Add animation delay for smooth appearance
+    setTimeout(() => {
+      workItem.classList.add("visible");
+    }, index * 150);
+  });
+
+  // Render Mobile Horizontal Scroll View
+  filteredWorks.forEach((work) => {
+    const workItem = createWorkItem(work);
+
+    if (work.figmaLink) {
+      // For Figma projects, open link in new tab
+      workItem.addEventListener("click", () => {
+        window.open(work.figmaLink, "_blank");
+      });
+    } else {
+      // For other projects, open modal
+      workItem.addEventListener("click", () => openModal(work));
+    }
+
+    workItem.classList.add("visible"); // Make immediately visible for mobile
+    mobileScrollTrack.appendChild(workItem);
+  });
 }
 
 // Filter Functionality
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        
-        // Get the filter value
-        const filter = btn.dataset.filter;
-        
-        // Immediately render new content
-        renderWorks(filter);
-    });
+filterBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    filterBtns.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    // Get the filter value
+    const filter = btn.dataset.filter;
+
+    // Immediately render new content
+    renderWorks(filter);
+  });
 });
 
 // Hobbies Gallery Functions
 function openHobbiesGallery(hobbyType) {
-    currentHobby = hobbiesData[hobbyType];
-    currentPhotoIndex = 0;
-    
-    // Update modal title and count
-    hobbyModalTitle.textContent = currentHobby.title;
-    hobbyModalCount.textContent = `${currentHobby.count} photos`;
-    
-    // Clear and populate gallery
-    hobbyGallery.innerHTML = '';
-    
-    currentHobby.photos.forEach((photo, index) => {
-        const slide = document.createElement('div');
-        slide.className = `gallery-slide ${index === 0 ? 'active' : ''}`;
-        slide.innerHTML = `
+  currentHobby = hobbiesData[hobbyType];
+  currentPhotoIndex = 0;
+
+  // Update modal title and count
+  hobbyModalTitle.textContent = currentHobby.title;
+  hobbyModalCount.textContent = `${currentHobby.count} photos`;
+
+  // Clear and populate gallery
+  hobbyGallery.innerHTML = "";
+
+  currentHobby.photos.forEach((photo, index) => {
+    const slide = document.createElement("div");
+    slide.className = `gallery-slide ${index === 0 ? "active" : ""}`;
+    slide.innerHTML = `
             <img src="${photo}" alt="${currentHobby.title} photo ${index + 1}" 
-                 loading="lazy" onerror="this.src='https://via.placeholder.com/800x600/4A90E2/FFFFFF?text=${currentHobby.title}+${index+1}'">
+                 loading="lazy" onerror="this.src='https://via.placeholder.com/800x600/4A90E2/FFFFFF?text=${currentHobby.title}+${index + 1}'">
         `;
-        hobbyGallery.appendChild(slide);
-    });
-    
-    // Update counter
-    updateGalleryCounter();
-    
-    // Show modal
-    hobbiesModal.style.display = 'block';
+    hobbyGallery.appendChild(slide);
+  });
+
+  // Update counter
+  updateGalleryCounter();
+
+  // Show modal
+  hobbiesModal.style.display = "block";
 }
 
 function updateGalleryCounter() {
-    galleryCounter.textContent = `${currentPhotoIndex + 1} / ${currentHobby.count}`;
-    
-    // Update button states
-    prevBtn.disabled = currentPhotoIndex === 0;
-    nextBtn.disabled = currentPhotoIndex === currentHobby.count - 1;
+  galleryCounter.textContent = `${currentPhotoIndex + 1} / ${currentHobby.count}`;
+
+  // Update button states
+  prevBtn.disabled = currentPhotoIndex === 0;
+  nextBtn.disabled = currentPhotoIndex === currentHobby.count - 1;
 }
 
 function showPhoto(index) {
-    const slides = document.querySelectorAll('.gallery-slide');
-    slides.forEach(slide => slide.classList.remove('active'));
-    
-    if (slides[index]) {
-        slides[index].classList.add('active');
-        currentPhotoIndex = index;
-        updateGalleryCounter();
-    }
+  const slides = document.querySelectorAll(".gallery-slide");
+  slides.forEach((slide) => slide.classList.remove("active"));
+
+  if (slides[index]) {
+    slides[index].classList.add("active");
+    currentPhotoIndex = index;
+    updateGalleryCounter();
+  }
 }
 
 function nextPhoto() {
-    if (currentPhotoIndex < currentHobby.count - 1) {
-        showPhoto(currentPhotoIndex + 1);
-    }
+  if (currentPhotoIndex < currentHobby.count - 1) {
+    showPhoto(currentPhotoIndex + 1);
+  }
 }
 
 function prevPhoto() {
-    if (currentPhotoIndex > 0) {
-        showPhoto(currentPhotoIndex - 1);
-    }
+  if (currentPhotoIndex > 0) {
+    showPhoto(currentPhotoIndex - 1);
+  }
 }
 
 // Modal Functionality
 function openModal(work) {
-    const modalContent = document.querySelector('.modal-content');
-    
-    if (work.figmaLink) {
-        // For Figma prototype, open in new tab
-        window.open(work.figmaLink, '_blank');
-        return; // Don't show modal for Figma links
-    } else if (work.iframe) {
-        // For portfolio project, display iframe in larger modal
-        modalContent.classList.add('project-modal', 'large-modal', 'iframe-modal');
-        modalBody.innerHTML = `
+  const modalContent = document.querySelector(".modal-content");
+
+  if (work.figmaLink) {
+    // For Figma prototype, open in new tab
+    window.open(work.figmaLink, "_blank");
+    return; // Don't show modal for Figma links
+  } else if (work.iframe) {
+    // For portfolio project, display iframe in larger modal
+    modalContent.classList.add("project-modal", "large-modal", "iframe-modal");
+    modalBody.innerHTML = `
             <div class="modal-header">
                 <h3>${work.title}</h3>
                 <p class="modal-description">${work.description}</p>
-                ${work.tags ? `<div class="project-tags">${work.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}</div>` : ''}
+                ${work.tags ? `<div class="project-tags">${work.tags.map((tag) => `<span class="project-tag">${tag}</span>`).join("")}</div>` : ""}
             </div>
             <div class="modal-content-area">
                 <iframe src="${work.iframe}" class="portfolio-iframe"></iframe>
             </div>
         `;
-    } else if (work.category === 'projects' && work.pdf) {
-        // For projects with PDF, display PDF in larger modal
-        modalContent.classList.add('project-modal', 'large-modal');
-        modalBody.innerHTML = `
+  } else if (work.category === "projects" && work.pdf) {
+    // For projects with PDF, display PDF in larger modal
+    modalContent.classList.add("project-modal", "large-modal");
+    modalBody.innerHTML = `
             <div class="modal-header">
                 <h3>${work.title}</h3>
                 <p class="modal-description">${work.description}</p>
-                ${work.tags ? `<div class="project-tags">${work.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}</div>` : ''}
+                ${work.tags ? `<div class="project-tags">${work.tags.map((tag) => `<span class="project-tag">${tag}</span>`).join("")}</div>` : ""}
             </div>
             <div class="modal-content-area">
                 <iframe src="${work.pdf}" class="pdf-viewer"></iframe>
             </div>
             <div class="modal-footer">
-                ${work.footerDescription ? `
-                    <p>${work.footerDescription} <a href="${work.contactEmail || 'mailto:noverojeremy1@gmail.com  '}">GMail</a> account.</p>
-                ` : `
-                    <p>For local testing and setup, the source code for ${work.title.includes('NewsHub') ? 'NewsHub' : 'this project'} is available on my <a href="https://github.com/jomelcandinato">GitHub</a> repository.</p>
-                `}
+                ${
+                  work.footerDescription
+                    ? `
+                    <p>${work.footerDescription} <a href="${work.contactEmail || "mailto:noverojeremy1@gmail.com  "}">GMail</a> account.</p>
+                `
+                    : `
+                    <p>For local testing and setup, the source code for ${work.title.includes("NewsHub") ? "NewsHub" : "this project"} is available on my <a href="https://github.com/jomelcandinato">GitHub</a> repository.</p>
+                `
+                }
             </div>
         `;
-    } else if (work.originalSize) {
-        // For webinars with original size
-        modalContent.classList.remove('project-modal', 'large-modal', 'iframe-modal');
-        modalContent.classList.add('original-size-modal');
-        modalBody.innerHTML = `
+  } else if (work.originalSize) {
+    // For webinars with original size
+    modalContent.classList.remove(
+      "project-modal",
+      "large-modal",
+      "iframe-modal",
+    );
+    modalContent.classList.add("original-size-modal");
+    modalBody.innerHTML = `
             <div class="modal-header">
                 <h3>${work.title}</h3>
             </div>
@@ -535,10 +546,15 @@ function openModal(work) {
                 <p class="modal-description">${work.description}</p>
             </div>
         `;
-    } else {
-        // For regular webinars, display image in regular modal
-        modalContent.classList.remove('project-modal', 'large-modal', 'iframe-modal', 'original-size-modal');
-        modalBody.innerHTML = `
+  } else {
+    // For regular webinars, display image in regular modal
+    modalContent.classList.remove(
+      "project-modal",
+      "large-modal",
+      "iframe-modal",
+      "original-size-modal",
+    );
+    modalBody.innerHTML = `
             <div class="modal-header">
                 <h3>${work.title}</h3>
             </div>
@@ -549,663 +565,728 @@ function openModal(work) {
                 <p class="modal-description">${work.description}</p>
             </div>
         `;
-    }
-    modal.style.display = 'block';
+  }
+  modal.style.display = "block";
 }
 
 // Close main modal
-closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    // Remove all modal classes when closing
-    const modalContent = document.querySelector('.modal-content');
-    modalContent.classList.remove('project-modal', 'large-modal', 'iframe-modal', 'original-size-modal');
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+  // Remove all modal classes when closing
+  const modalContent = document.querySelector(".modal-content");
+  modalContent.classList.remove(
+    "project-modal",
+    "large-modal",
+    "iframe-modal",
+    "original-size-modal",
+  );
 });
 
 // Close resume modal
-closeResumeBtn.addEventListener('click', () => {
-    resumeModal.style.display = 'none';
+closeResumeBtn.addEventListener("click", () => {
+  resumeModal.style.display = "none";
 });
 
 // Close hobbies modal
-closeHobbiesBtn.addEventListener('click', () => {
-    hobbiesModal.style.display = 'none';
+closeHobbiesBtn.addEventListener("click", () => {
+  hobbiesModal.style.display = "none";
 });
 
 // Close modals when clicking outside
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
-        // Remove all modal classes when closing
-        const modalContent = document.querySelector('.modal-content');
-        modalContent.classList.remove('project-modal', 'large-modal', 'iframe-modal', 'original-size-modal');
-    }
-    if (e.target === resumeModal) {
-        resumeModal.style.display = 'none';
-    }
-    if (e.target === hobbiesModal) {
-        hobbiesModal.style.display = 'none';
-    }
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+    // Remove all modal classes when closing
+    const modalContent = document.querySelector(".modal-content");
+    modalContent.classList.remove(
+      "project-modal",
+      "large-modal",
+      "iframe-modal",
+      "original-size-modal",
+    );
+  }
+  if (e.target === resumeModal) {
+    resumeModal.style.display = "none";
+  }
+  if (e.target === hobbiesModal) {
+    hobbiesModal.style.display = "none";
+  }
 });
 
 // Open Resume Modal
-viewResumeBtn.addEventListener('click', () => {
-    resumeModal.style.display = 'block';
-    // Focus on the resume viewer
-    setTimeout(() => {
-        resumeViewer.focus();
-    }, 100);
+viewResumeBtn.addEventListener("click", () => {
+  resumeModal.style.display = "block";
+  // Focus on the resume viewer
+  setTimeout(() => {
+    resumeViewer.focus();
+  }, 100);
 });
 
 // Enhanced Smooth Scrolling with Consistent Animation
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        
-        // Close mobile menu if open
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-        document.body.classList.remove('menu-open');
-        
-        // Calculate offset for fixed navbar
-        const navbarHeight = document.querySelector('.navbar').offsetHeight;
-        const targetPosition = targetSection.offsetTop - navbarHeight;
-        
-        // Smooth scroll to section
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
-        
-        // Wait for scroll to complete, then trigger animations
-        setTimeout(() => {
-            // Reset animations to ensure they play again
-            resetSectionAnimations(targetSection);
-            
-            // Trigger the same animation as scroll
-            animateSection(targetSection);
-            animatedSections.add(targetSection.id);
-        }, 600);
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    const targetSection = document.getElementById(targetId);
+
+    // Close mobile menu if open
+    navMenu.classList.remove("active");
+    hamburger.classList.remove("active");
+    document.body.classList.remove("menu-open");
+
+    // Calculate offset for fixed navbar
+    const navbarHeight = document.querySelector(".navbar").offsetHeight;
+    const targetPosition = targetSection.offsetTop - navbarHeight;
+
+    // Smooth scroll to section
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
     });
+
+    // Wait for scroll to complete, then trigger animations
+    setTimeout(() => {
+      // Reset animations to ensure they play again
+      resetSectionAnimations(targetSection);
+
+      // Trigger the same animation as scroll
+      animateSection(targetSection);
+      animatedSections.add(targetSection.id);
+    }, 600);
+  });
 });
 
 // Mobile Hamburger Menu
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-    
-    // Toggle body scroll lock
-    if (navMenu.classList.contains('active')) {
-        document.body.classList.add('menu-open');
-    } else {
-        document.body.classList.remove('menu-open');
-    }
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+  hamburger.classList.toggle("active");
+
+  // Toggle body scroll lock
+  if (navMenu.classList.contains("active")) {
+    document.body.classList.add("menu-open");
+  } else {
+    document.body.classList.remove("menu-open");
+  }
 });
 
 // Close menu when clicking outside on mobile
-document.addEventListener('click', (e) => {
-    if (window.innerWidth <= 768) {
-        const isClickInsideMenu = navMenu.contains(e.target);
-        const isClickOnHamburger = hamburger.contains(e.target);
-        
-        if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        }
+document.addEventListener("click", (e) => {
+  if (window.innerWidth <= 768) {
+    const isClickInsideMenu = navMenu.contains(e.target);
+    const isClickOnHamburger = hamburger.contains(e.target);
+
+    if (
+      !isClickInsideMenu &&
+      !isClickOnHamburger &&
+      navMenu.classList.contains("active")
+    ) {
+      navMenu.classList.remove("active");
+      hamburger.classList.remove("active");
+      document.body.classList.remove("menu-open");
     }
+  }
 });
 
 // Close menu when pressing Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-        document.body.classList.remove('menu-open');
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && navMenu.classList.contains("active")) {
+    navMenu.classList.remove("active");
+    hamburger.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  }
+
+  // Also close modals with Escape
+  if (e.key === "Escape") {
+    if (modal.style.display === "block") {
+      modal.style.display = "none";
+      const modalContent = document.querySelector(".modal-content");
+      modalContent.classList.remove(
+        "project-modal",
+        "large-modal",
+        "iframe-modal",
+        "original-size-modal",
+      );
     }
-    
-    // Also close modals with Escape
-    if (e.key === 'Escape') {
-        if (modal.style.display === 'block') {
-            modal.style.display = 'none';
-            const modalContent = document.querySelector('.modal-content');
-            modalContent.classList.remove('project-modal', 'large-modal', 'iframe-modal', 'original-size-modal');
-        }
-        if (resumeModal.style.display === 'block') {
-            resumeModal.style.display = 'none';
-        }
-        if (hobbiesModal.style.display === 'block') {
-            hobbiesModal.style.display = 'none';
-        }
+    if (resumeModal.style.display === "block") {
+      resumeModal.style.display = "none";
     }
-    
-    // Keyboard navigation for hobbies gallery
-    if (hobbiesModal.style.display === 'block' && currentHobby) {
-        if (e.key === 'ArrowRight') {
-            nextPhoto();
-        } else if (e.key === 'ArrowLeft') {
-            prevPhoto();
-        }
+    if (hobbiesModal.style.display === "block") {
+      hobbiesModal.style.display = "none";
     }
+  }
+
+  // Keyboard navigation for hobbies gallery
+  if (hobbiesModal.style.display === "block" && currentHobby) {
+    if (e.key === "ArrowRight") {
+      nextPhoto();
+    } else if (e.key === "ArrowLeft") {
+      prevPhoto();
+    }
+  }
 });
 
 // reCAPTCHA Functions
 function onRecaptchaSuccess(token) {
-    console.log('reCAPTCHA verified successfully');
-    document.getElementById('recaptcha-error').style.display = 'none';
-    // Enable submit button if needed
-    const sendBtn = document.getElementById('sendMessageBtn');
-    sendBtn.disabled = false;
+  console.log("reCAPTCHA verified successfully");
+  document.getElementById("recaptcha-error").style.display = "none";
+  // Enable submit button if needed
+  const sendBtn = document.getElementById("sendMessageBtn");
+  sendBtn.disabled = false;
 }
 
 function onRecaptchaExpired() {
-    console.log('reCAPTCHA expired, please verify again');
-    document.getElementById('recaptcha-error').style.display = 'block';
-    document.getElementById('recaptcha-error').textContent = 'reCAPTCHA verification expired. Please verify again.';
+  console.log("reCAPTCHA expired, please verify again");
+  document.getElementById("recaptcha-error").style.display = "block";
+  document.getElementById("recaptcha-error").textContent =
+    "reCAPTCHA verification expired. Please verify again.";
 }
 
 function onRecaptchaError() {
-    console.log('reCAPTCHA error occurred');
-    document.getElementById('recaptcha-error').style.display = 'block';
-    document.getElementById('recaptcha-error').textContent = 'Error with reCAPTCHA verification. Please try again.';
+  console.log("reCAPTCHA error occurred");
+  document.getElementById("recaptcha-error").style.display = "block";
+  document.getElementById("recaptcha-error").textContent =
+    "Error with reCAPTCHA verification. Please try again.";
 }
 
 // Function to manually check if reCAPTCHA is completed
 function isRecaptchaCompleted() {
-    if (typeof grecaptcha !== 'undefined') {
-        const response = grecaptcha.getResponse();
-        return response.length > 0;
-    }
-    return false;
+  if (typeof grecaptcha !== "undefined") {
+    const response = grecaptcha.getResponse();
+    return response.length > 0;
+  }
+  return false;
 }
 
 // Show form message
-function showFormMessage(message, type = 'success') {
-    formMessage.textContent = message;
-    formMessage.className = `form-message ${type}-message`;
-    formMessage.style.display = 'block';
-    
-    // Scroll to message
-    formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    
-    // Hide message after 5 seconds
-    if (type === 'success') {
-        setTimeout(() => {
-            formMessage.style.display = 'none';
-        }, 5000);
-    }
+function showFormMessage(message, type = "success") {
+  formMessage.textContent = message;
+  formMessage.className = `form-message ${type}-message`;
+  formMessage.style.display = "block";
+
+  // Scroll to message
+  formMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+
+  // Hide message after 5 seconds
+  if (type === "success") {
+    setTimeout(() => {
+      formMessage.style.display = "none";
+    }, 5000);
+  }
 }
 
 // Show contact card message below the contact cards
-function showContactCardMessage(message, type = 'success') {
-    // Create a new message element specifically for contact cards
-    const contactCardsContainer = document.querySelector('.contact-info-cards');
-    const existingContactMessage = document.getElementById('contact-card-message');
-    
-    // Remove existing message if it exists
-    if (existingContactMessage) {
-        existingContactMessage.remove();
-    }
-    
-    // Create new message element
-    const contactMessage = document.createElement('div');
-    contactMessage.id = 'contact-card-message';
-    contactMessage.className = `contact-card-message ${type}-message`;
-    contactMessage.textContent = message;
-    
-    // Insert the message below the contact cards
-    contactCardsContainer.parentNode.insertBefore(contactMessage, contactCardsContainer.nextSibling);
-    
-    // Scroll the message into view
-    setTimeout(() => {
-        contactMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 100);
-    
-    // Hide message after 5 seconds
-    setTimeout(() => {
+function showContactCardMessage(message, type = "success") {
+  // Create a new message element specifically for contact cards
+  const contactCardsContainer = document.querySelector(".contact-info-cards");
+  const existingContactMessage = document.getElementById(
+    "contact-card-message",
+  );
+
+  // Remove existing message if it exists
+  if (existingContactMessage) {
+    existingContactMessage.remove();
+  }
+
+  // Create new message element
+  const contactMessage = document.createElement("div");
+  contactMessage.id = "contact-card-message";
+  contactMessage.className = `contact-card-message ${type}-message`;
+  contactMessage.textContent = message;
+
+  // Insert the message below the contact cards
+  contactCardsContainer.parentNode.insertBefore(
+    contactMessage,
+    contactCardsContainer.nextSibling,
+  );
+
+  // Scroll the message into view
+  setTimeout(() => {
+    contactMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, 100);
+
+  // Hide message after 5 seconds
+  setTimeout(() => {
+    if (contactMessage.parentNode) {
+      contactMessage.style.opacity = "0";
+      contactMessage.style.transform = "translateY(-10px)";
+      setTimeout(() => {
         if (contactMessage.parentNode) {
-            contactMessage.style.opacity = '0';
-            contactMessage.style.transform = 'translateY(-10px)';
-            setTimeout(() => {
-                if (contactMessage.parentNode) {
-                    contactMessage.remove();
-                }
-            }, 300);
+          contactMessage.remove();
         }
-    }, 5000);
+      }, 300);
+    }
+  }, 5000);
 }
 
-// Contact Form Submission with EmailJS and reCAPTCHA
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Hide previous messages
-    formMessage.style.display = 'none';
-    document.getElementById('recaptcha-error').style.display = 'none';
-    
-    // Check reCAPTCHA
-    if (!isRecaptchaCompleted()) {
-        showFormMessage('Please complete the reCAPTCHA verification!', 'error');
-        document.getElementById('recaptcha-error').style.display = 'block';
-        document.getElementById('recaptcha-error').textContent = 'Please complete the reCAPTCHA verification!';
-        return;
+// Contact Form Submission - Updated to use server endpoint
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  // Hide previous messages
+  formMessage.style.display = "none";
+  document.getElementById("recaptcha-error").style.display = "none";
+
+  // Check reCAPTCHA
+  if (!isRecaptchaCompleted()) {
+    showFormMessage("Please complete the reCAPTCHA verification!", "error");
+    document.getElementById("recaptcha-error").style.display = "block";
+    document.getElementById("recaptcha-error").textContent =
+      "Please complete the reCAPTCHA verification!";
+    return;
+  }
+
+  // Get reCAPTCHA token
+  const recaptchaToken = grecaptcha.getResponse();
+
+  // Verify reCAPTCHA token (client-side check)
+  if (!recaptchaToken) {
+    showFormMessage(
+      "reCAPTCHA verification failed. Please try again.",
+      "error",
+    );
+    return;
+  }
+
+  // Show sending state
+  sendText.style.display = "none";
+  sendingText.style.display = "inline";
+  sendMessageBtn.disabled = true;
+
+  // Get form values
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const subject = document.getElementById("subject").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  // Validate form
+  if (!name || !email || !subject || !message) {
+    showFormMessage("Please fill in all fields!", "error");
+    sendText.style.display = "inline";
+    sendingText.style.display = "none";
+    sendMessageBtn.disabled = false;
+    return;
+  }
+
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    showFormMessage("Please enter a valid email address!", "error");
+    sendText.style.display = "inline";
+    sendingText.style.display = "none";
+    sendMessageBtn.disabled = false;
+    return;
+  }
+
+  try {
+    console.log("Sending contact form data to server...");
+
+    // Send form data to server
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+        recaptcha_token: recaptchaToken,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok && data.success) {
+      console.log("Message sent successfully:", data);
+
+      // Success message with sender's email
+      showFormMessage(
+        `Thank you, ${name}! Your message has been sent. I will reach out to you soon.`,
+        "success",
+      );
+
+      // Reset form and reCAPTCHA
+      contactForm.reset();
+      grecaptcha.reset();
+
+      // Log the email for debugging
+      console.log(`Message sent from: ${email}`);
+      console.log(`Sender's email (for reply): ${email}`);
+    } else {
+      throw new Error(
+        data.error || `Server returned status: ${response.status}`,
+      );
     }
-    
-    // Get reCAPTCHA token
-    const recaptchaToken = grecaptcha.getResponse();
-    
-    // Verify reCAPTCHA token (client-side check)
-    if (!recaptchaToken) {
-        showFormMessage('reCAPTCHA verification failed. Please try again.', 'error');
-        return;
+  } catch (error) {
+    console.error("Error sending message:", error);
+
+    // More detailed error messages
+    let errorMessage = "Sorry, there was an error sending your message. ";
+
+    if (error.message) {
+      errorMessage += `Error: ${error.message}`;
+    } else {
+      errorMessage += "Please try again later.";
     }
-    
-    // Show sending state
-    sendText.style.display = 'none';
-    sendingText.style.display = 'inline';
-    sendMessageBtn.disabled = true;
-    
-    // Get form values
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const subject = document.getElementById('subject').value.trim();
-    const message = document.getElementById('message').value.trim();
-    
-    // Validate form
-    if (!name || !email || !subject || !message) {
-        showFormMessage('Please fill in all fields!', 'error');
-        sendText.style.display = 'inline';
-        sendingText.style.display = 'none';
-        sendMessageBtn.disabled = false;
-        return;
+
+    showFormMessage(errorMessage, "error");
+
+    // Reset reCAPTCHA on error
+    if (typeof grecaptcha !== "undefined") {
+      grecaptcha.reset();
     }
-    
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        showFormMessage('Please enter a valid email address!', 'error');
-        sendText.style.display = 'inline';
-        sendingText.style.display = 'none';
-        sendMessageBtn.disabled = false;
-        return;
-    }
-    
-    try {
-        // Check if EmailJS credentials are set
-        if (EMAILJS_CONFIG.USER_ID === 'YOUR_EMAILJS_USER_ID') {
-            throw new Error('EmailJS credentials not configured. Please update script.js with your EmailJS credentials.');
-        }
-        
-        console.log('Sending email with EmailJS...');
-        
-        // Send email using EmailJS with reply-to functionality
-        const templateParams = {
-            from_name: name,
-            from_email: email,
-            subject: subject,
-            message: message,
-            reply_to: email, // This sets the Reply-To header
-            to_name: 'Jomel', // Your name for the email
-            date: new Date().toLocaleString(),
-            recaptcha_token: recaptchaToken // Add reCAPTCHA token to email content
-        };
-        
-        const response = await emailjs.send(
-            EMAILJS_CONFIG.SERVICE_ID,
-            EMAILJS_CONFIG.TEMPLATE_ID,
-            templateParams
-        );
-        
-        console.log('Email sent successfully:', response);
-        
-        if (response.status === 200) {
-            // Success message with sender's email
-            showFormMessage(`Thank you, ${name}! Your message has been sent. I will reach out to you soon.`, 'success');
-            
-            // Reset form and reCAPTCHA
-            contactForm.reset();
-            grecaptcha.reset();
-            
-            // Log the email for debugging
-            console.log(`Message sent from: ${email}`);
-            
-            // Show sender's email in console for verification
-            console.log(`Sender's email (for reply): ${email}`);
-        } else {
-            throw new Error(`EmailJS returned status: ${response.status}`);
-        }
-        
-    } catch (error) {
-        console.error('Error sending message:', error);
-        
-        // More detailed error messages
-        let errorMessage = 'Sorry, there was an error sending your message. ';
-        
-        if (error.text) {
-            errorMessage += `Error: ${error.text}`;
-        } else if (error.message) {
-            errorMessage += `Error: ${error.message}`;
-        } else {
-            errorMessage += 'Please try again later.';
-        }
-        
-        showFormMessage(errorMessage, 'error');
-        
-        // Reset reCAPTCHA on error
-        if (typeof grecaptcha !== 'undefined') {
-            grecaptcha.reset();
-        }
-        
-        // For debugging - check if it's a credential issue
-        if (EMAILJS_CONFIG.USER_ID === 'YOUR_EMAILJS_USER_ID') {
-            console.error('EmailJS credentials not set. Please update the EMAILJS_CONFIG object in script.js');
-        }
-    } finally {
-        // Reset button state
-        sendText.style.display = 'inline';
-        sendingText.style.display = 'none';
-        sendMessageBtn.disabled = false;
-    }
+
+    // For debugging
+    console.error("Contact form submission error:", error);
+  } finally {
+    // Reset button state
+    sendText.style.display = "inline";
+    sendingText.style.display = "none";
+    sendMessageBtn.disabled = false;
+  }
 });
 
 // Clear Form Functionality with reCAPTCHA reset
-resetFormBtn.addEventListener('click', () => {
-    contactForm.reset();
-    formMessage.style.display = 'none';
-    document.getElementById('recaptcha-error').style.display = 'none';
-    
-    // Reset reCAPTCHA
-    if (typeof grecaptcha !== 'undefined') {
-        grecaptcha.reset();
-    }
-    
-    // Remove any invalid states
-    const formControls = contactForm.querySelectorAll('.form-control');
-    formControls.forEach(control => {
-        control.classList.remove('is-invalid');
-    });
+resetFormBtn.addEventListener("click", () => {
+  contactForm.reset();
+  formMessage.style.display = "none";
+  document.getElementById("recaptcha-error").style.display = "none";
+
+  // Reset reCAPTCHA
+  if (typeof grecaptcha !== "undefined") {
+    grecaptcha.reset();
+  }
+
+  // Remove any invalid states
+  const formControls = contactForm.querySelectorAll(".form-control");
+  formControls.forEach((control) => {
+    control.classList.remove("is-invalid");
+  });
 });
 
 // Contact Card Functions
 function sendEmail() {
-    const email = 'jomelcandinato.ojt@gmail.com';
-    const subject = 'Portfolio Inquiry';
-    const body = 'Hello Jomel,\n\nI visited your portfolio website and would like to get in touch...';
-    
-    // Create mailto link
-    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    // Open email client
-    window.open(mailtoLink, '_blank');
-    
-    // Show confirmation message below contact cards
-    showContactCardMessage('Opening email client...', 'success');
+  const email = "jomelcandinato.ojt@gmail.com";
+  const subject = "Portfolio Inquiry";
+  const body =
+    "Hello Jomel,\n\nI visited your portfolio website and would like to get in touch...";
+
+  // Create mailto link
+  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  // Open email client
+  window.open(mailtoLink, "_blank");
+
+  // Show confirmation message below contact cards
+  showContactCardMessage("Opening email client...", "success");
 }
 
 function makeCall() {
-    const phoneNumber = '+639380355961'; // Remove spaces for proper tel: link
-    
-    // Create tel link
-    const telLink = `tel:${phoneNumber}`;
-    
-    // For mobile devices, this will open the phone dialer
-    // For desktop, it may not work, so we'll show a message
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        // Mobile device - open dialer
-        window.location.href = telLink;
-        // Show message
-        showContactCardMessage(`Opening phone dialer for ${phoneNumber}...`, 'success');
-    } else {
-        // Desktop - show phone number with instructions
-        showContactCardMessage(`Phone: ${phoneNumber}. On mobile, this would open your dialer.`, 'success');
-        
-        // Optional: Copy to clipboard
-        navigator.clipboard.writeText(phoneNumber).then(() => {
-            console.log('Phone number copied to clipboard');
-        }).catch(err => {
-            console.log('Failed to copy phone number: ', err);
-        });
-    }
+  const phoneNumber = "+639380355961"; // Remove spaces for proper tel: link
+
+  // Create tel link
+  const telLink = `tel:${phoneNumber}`;
+
+  // For mobile devices, this will open the phone dialer
+  // For desktop, it may not work, so we'll show a message
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent,
+    )
+  ) {
+    // Mobile device - open dialer
+    window.location.href = telLink;
+    // Show message
+    showContactCardMessage(
+      `Opening phone dialer for ${phoneNumber}...`,
+      "success",
+    );
+  } else {
+    // Desktop - show phone number with instructions
+    showContactCardMessage(
+      `Phone: ${phoneNumber}. On mobile, this would open your dialer.`,
+      "success",
+    );
+
+    // Optional: Copy to clipboard
+    navigator.clipboard
+      .writeText(phoneNumber)
+      .then(() => {
+        console.log("Phone number copied to clipboard");
+      })
+      .catch((err) => {
+        console.log("Failed to copy phone number: ", err);
+      });
+  }
 }
 
 // Tooltip functions for contact cards
 function showTooltip(element, message) {
-    // Check if tooltip already exists
-    let tooltip = element.querySelector('.contact-card-tooltip');
-    
-    if (!tooltip) {
-        // Create tooltip
-        tooltip = document.createElement('div');
-        tooltip.className = 'contact-card-tooltip';
-        tooltip.textContent = message;
-        element.appendChild(tooltip);
-        
-        // Position tooltip
-        setTimeout(() => {
-            tooltip.style.opacity = '1';
-            tooltip.style.visibility = 'visible';
-            tooltip.style.transform = 'translateX(-50%) translateY(-5px)';
-        }, 10);
-    } else {
-        // Update existing tooltip
-        tooltip.textContent = message;
-        tooltip.style.opacity = '1';
-        tooltip.style.visibility = 'visible';
-        tooltip.style.transform = 'translateX(-50%) translateY(-5px)';
-    }
+  // Check if tooltip already exists
+  let tooltip = element.querySelector(".contact-card-tooltip");
+
+  if (!tooltip) {
+    // Create tooltip
+    tooltip = document.createElement("div");
+    tooltip.className = "contact-card-tooltip";
+    tooltip.textContent = message;
+    element.appendChild(tooltip);
+
+    // Position tooltip
+    setTimeout(() => {
+      tooltip.style.opacity = "1";
+      tooltip.style.visibility = "visible";
+      tooltip.style.transform = "translateX(-50%) translateY(-5px)";
+    }, 10);
+  } else {
+    // Update existing tooltip
+    tooltip.textContent = message;
+    tooltip.style.opacity = "1";
+    tooltip.style.visibility = "visible";
+    tooltip.style.transform = "translateX(-50%) translateY(-5px)";
+  }
 }
 
 function hideTooltip(element) {
-    const tooltip = element.querySelector('.contact-card-tooltip');
-    if (tooltip) {
-        tooltip.style.opacity = '0';
-        tooltip.style.visibility = 'hidden';
-        tooltip.style.transform = 'translateX(-50%) translateY(-10px)';
-        
-        // Remove tooltip after animation
-        setTimeout(() => {
-            if (tooltip.parentNode === element) {
-                element.removeChild(tooltip);
-            }
-        }, 300);
-    }
+  const tooltip = element.querySelector(".contact-card-tooltip");
+  if (tooltip) {
+    tooltip.style.opacity = "0";
+    tooltip.style.visibility = "hidden";
+    tooltip.style.transform = "translateX(-50%) translateY(-10px)";
+
+    // Remove tooltip after animation
+    setTimeout(() => {
+      if (tooltip.parentNode === element) {
+        element.removeChild(tooltip);
+      }
+    }, 300);
+  }
 }
 
 // Function to make footer elements always visible
 function makeFooterVisible() {
-    const footerText = document.querySelector('.footer-text');
-    const footerCopyright = document.querySelector('.footer-copyright');
-    const fbLinks = document.querySelectorAll('.fb-link');
-    const igLinks = document.querySelectorAll('.ig-link');
-    
-    // Remove animate-text class from footer elements or force them to be visible
-    if (footerText) {
-        footerText.classList.remove('animate-text');
-        footerText.style.opacity = '1';
-        footerText.style.transform = 'translateY(0)';
+  const footerText = document.querySelector(".footer-text");
+  const footerCopyright = document.querySelector(".footer-copyright");
+  const fbLinks = document.querySelectorAll(".fb-link");
+  const igLinks = document.querySelectorAll(".ig-link");
+
+  // Remove animate-text class from footer elements or force them to be visible
+  if (footerText) {
+    footerText.classList.remove("animate-text");
+    footerText.style.opacity = "1";
+    footerText.style.transform = "translateY(0)";
+  }
+
+  if (footerCopyright) {
+    footerCopyright.classList.remove("animate-text");
+    footerCopyright.style.opacity = "0.7";
+    footerCopyright.style.transform = "translateY(0)";
+  }
+
+  fbLinks.forEach((link) => {
+    link.classList.remove("animate-text");
+    link.style.opacity = "0.8";
+    link.style.transform = "translateY(0)";
+  });
+
+  igLinks.forEach((link) => {
+    link.classList.remove("animate-text");
+    link.style.opacity = "0.8";
+    link.style.transform = "translateY(0)";
+  });
+}
+
+// Function to load configuration from server
+async function loadConfig() {
+  try {
+    console.log("Loading configuration from server...");
+
+    const response = await fetch("/api/config");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-    
-    if (footerCopyright) {
-        footerCopyright.classList.remove('animate-text');
-        footerCopyright.style.opacity = '0.7';
-        footerCopyright.style.transform = 'translateY(0)';
+
+    const config = await response.json();
+    CONFIG = config;
+
+    console.log("Configuration loaded successfully");
+
+    // Update reCAPTCHA site key if available
+    if (config.RECAPTCHA && config.RECAPTCHA.SITE_KEY) {
+      const recaptchaDiv = document.querySelector(".g-recaptcha");
+      if (recaptchaDiv) {
+        recaptchaDiv.setAttribute("data-sitekey", config.RECAPTCHA.SITE_KEY);
+      }
     }
-    
-    fbLinks.forEach(link => {
-        link.classList.remove('animate-text');
-        link.style.opacity = '0.8';
-        link.style.transform = 'translateY(0)';
-    });
-    
-    igLinks.forEach(link => {
-        link.classList.remove('animate-text');
-        link.style.opacity = '0.8';
-        link.style.transform = 'translateY(0)';
-    });
+
+    // Initialize EmailJS if available
+    if (
+      config.EMAILJS &&
+      config.EMAILJS.USER_ID &&
+      config.EMAILJS.USER_ID !== "YOUR_EMAILJS_USER_ID"
+    ) {
+      emailjs.init(config.EMAILJS.USER_ID);
+      console.log("EmailJS initialized with User ID");
+    }
+  } catch (error) {
+    console.error("Error loading configuration:", error);
+    // Use fallback values or show error
+    showFormMessage(
+      "Configuration error. Some features may not work properly.",
+      "error",
+    );
+  }
 }
 
 // Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    // Initial render of works (show all by default)
-    renderWorks('all');
-    
-    // Make sure footer is visible
-    footer.style.display = 'block';
-    
-    // Make footer elements always visible
-    makeFooterVisible();
-    
-    // Animate hero section immediately
-    const heroSection = document.getElementById('hero');
-    animateSection(heroSection);
-    animatedSections.add('hero');
-    
-    // Add loading animation
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease';
-        document.body.style.opacity = '1';
-    }, 100);
-    
-    // Initialize scroll to top button
-    scrollToTopBtn.addEventListener('click', scrollToTop);
-    window.addEventListener('scroll', toggleScrollToTopButton);
-    
-    // Add download event listener to the resume download button
-    const downloadBtn = document.getElementById('downloadResumeBtn');
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Trigger download
-            downloadResume();
-            
-            // Optional: Close the modal after download starts
-            setTimeout(() => {
-                resumeModal.style.display = 'none';
-            }, 500);
-            
-            return false;
-        });
-    }
-    
-    // Add event listeners to hobby previews
-    const hobbyPreviews = document.querySelectorAll('.hobby-preview');
-    hobbyPreviews.forEach(preview => {
-        preview.addEventListener('click', function() {
-            const hobbyType = this.dataset.hobby;
-            openHobbiesGallery(hobbyType);
-        });
+document.addEventListener("DOMContentLoaded", async () => {
+  // Load configuration first
+  await loadConfig();
+
+  // Initial render of works (show all by default)
+  renderWorks("all");
+
+  // Make sure footer is visible
+  footer.style.display = "block";
+
+  // Make footer elements always visible
+  makeFooterVisible();
+
+  // Animate hero section immediately
+  const heroSection = document.getElementById("hero");
+  animateSection(heroSection);
+  animatedSections.add("hero");
+
+  // Add loading animation
+  document.body.style.opacity = "0";
+  setTimeout(() => {
+    document.body.style.transition = "opacity 0.5s ease";
+    document.body.style.opacity = "1";
+  }, 100);
+
+  // Initialize scroll to top button
+  scrollToTopBtn.addEventListener("click", scrollToTop);
+  window.addEventListener("scroll", toggleScrollToTopButton);
+
+  // Add download event listener to the resume download button
+  const downloadBtn = document.getElementById("downloadResumeBtn");
+  if (downloadBtn) {
+    downloadBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Trigger download
+      downloadResume();
+
+      // Optional: Close the modal after download starts
+      setTimeout(() => {
+        resumeModal.style.display = "none";
+      }, 500);
+
+      return false;
     });
-    
-    // Add keyboard navigation for hobbies gallery
-    prevBtn.addEventListener('click', prevPhoto);
-    nextBtn.addEventListener('click', nextPhoto);
-    
-    // Check if EmailJS is properly configured
-    if (EMAILJS_CONFIG.USER_ID === 'YOUR_EMAILJS_USER_ID') {
-        console.warn('⚠️ EmailJS is not configured. Please update EMAILJS_CONFIG in script.js');
-        console.warn('Go to EmailJS dashboard to get your:');
-        console.warn('1. Public Key (User ID)');
-        console.warn('2. Service ID');
-        console.warn('3. Template ID');
-    }
-    
-    // Check if reCAPTCHA is properly configured
-    if (RECAPTCHA_CONFIG.SITE_KEY === '6LcBqm4qAAAAAG2C4wK6XYe_a-hd-ISwU1jOSLAW') {
-        console.log('✅ reCAPTCHA configured with site key');
-    } else {
-        console.warn('⚠️ Please update RECAPTCHA_CONFIG with your actual reCAPTCHA keys');
-    }
-    
-    // Add hover effect to skill items
-    skillItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.05)';
-        });
-        
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
+  }
+
+  // Add event listeners to hobby previews
+  const hobbyPreviews = document.querySelectorAll(".hobby-preview");
+  hobbyPreviews.forEach((preview) => {
+    preview.addEventListener("click", function () {
+      const hobbyType = this.dataset.hobby;
+      openHobbiesGallery(hobbyType);
     });
-    
-    // Add touch event listeners for mobile contact cards
-    const emailCard = document.querySelector('.email-card');
-    const phoneCard = document.querySelector('.phone-card');
-    
-    if (emailCard) {
-        emailCard.addEventListener('touchstart', function(e) {
-            e.preventDefault();
-            this.classList.add('touched');
-        });
-        
-        emailCard.addEventListener('touchend', function(e) {
-            e.preventDefault();
-            this.classList.remove('touched');
-            sendEmail();
-        });
-    }
-    
-    if (phoneCard) {
-        phoneCard.addEventListener('touchstart', function(e) {
-            e.preventDefault();
-            this.classList.add('touched');
-        });
-        
-        phoneCard.addEventListener('touchend', function(e) {
-            e.preventDefault();
-            this.classList.remove('touched');
-            makeCall();
-        });
-    }
-    
-    // Add click event listeners for desktop contact cards
-    const emailCards = document.querySelectorAll('.email-card');
-    const phoneCards = document.querySelectorAll('.phone-card');
-    
-    emailCards.forEach(card => {
-        card.addEventListener('click', sendEmail);
+  });
+
+  // Add keyboard navigation for hobbies gallery
+  prevBtn.addEventListener("click", prevPhoto);
+  nextBtn.addEventListener("click", nextPhoto);
+
+  // Add hover effect to skill items
+  skillItems.forEach((item) => {
+    item.addEventListener("mouseenter", function () {
+      this.style.transform = "translateY(-10px) scale(1.05)";
     });
-    
-    phoneCards.forEach(card => {
-        card.addEventListener('click', makeCall);
+
+    item.addEventListener("mouseleave", function () {
+      this.style.transform = "translateY(0) scale(1)";
     });
+  });
+
+  // Add touch event listeners for mobile contact cards
+  const emailCard = document.querySelector(".email-card");
+  const phoneCard = document.querySelector(".phone-card");
+
+  if (emailCard) {
+    emailCard.addEventListener("touchstart", function (e) {
+      e.preventDefault();
+      this.classList.add("touched");
+    });
+
+    emailCard.addEventListener("touchend", function (e) {
+      e.preventDefault();
+      this.classList.remove("touched");
+      sendEmail();
+    });
+  }
+
+  if (phoneCard) {
+    phoneCard.addEventListener("touchstart", function (e) {
+      e.preventDefault();
+      this.classList.add("touched");
+    });
+
+    phoneCard.addEventListener("touchend", function (e) {
+      e.preventDefault();
+      this.classList.remove("touched");
+      makeCall();
+    });
+  }
+
+  // Add click event listeners for desktop contact cards
+  const emailCards = document.querySelectorAll(".email-card");
+  const phoneCards = document.querySelectorAll(".phone-card");
+
+  emailCards.forEach((card) => {
+    card.addEventListener("click", sendEmail);
+  });
+
+  phoneCards.forEach((card) => {
+    card.addEventListener("click", makeCall);
+  });
 });
 
 // Handle page refresh - reset animations
-window.addEventListener('beforeunload', () => {
-    animatedSections.clear();
+window.addEventListener("beforeunload", () => {
+  animatedSections.clear();
 });
 
 // Handle resize events
-window.addEventListener('resize', () => {
-    // Close mobile menu on resize to desktop
-    if (window.innerWidth > 768) {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-        document.body.classList.remove('menu-open');
-    }
+window.addEventListener("resize", () => {
+  // Close mobile menu on resize to desktop
+  if (window.innerWidth > 768) {
+    navMenu.classList.remove("active");
+    hamburger.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  }
 });
 
 // Re-animate sections when they come back into view
-window.addEventListener('scroll', () => {
-    sections.forEach(section => {
-        if (section.id !== 'hero') {
-            const rect = section.getBoundingClientRect();
-            const isInViewport = (
-                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
-                rect.bottom >= 0
-            );
-            
-            if (isInViewport && !animatedSections.has(section.id)) {
-                animateSection(section);
-                animatedSections.add(section.id);
-            }
-        }
-    });
-    
-    // Update scroll to top button visibility
-    toggleScrollToTopButton();
+window.addEventListener("scroll", () => {
+  sections.forEach((section) => {
+    if (section.id !== "hero") {
+      const rect = section.getBoundingClientRect();
+      const isInViewport =
+        rect.top <=
+          (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+        rect.bottom >= 0;
+
+      if (isInViewport && !animatedSections.has(section.id)) {
+        animateSection(section);
+        animatedSections.add(section.id);
+      }
+    }
+  });
+
+  // Update scroll to top button visibility
+  toggleScrollToTopButton();
 });
